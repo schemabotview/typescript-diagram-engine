@@ -86,7 +86,16 @@ only the FIRST course, so it shot nothing for any other (worth fixing in ui-shel
 - No TypeScript / Node / npm brand icons in graphl-flow yet; generic keys stand in (`code`, `cpu`,
   `package`). Adding `typescript`, `nodedotjs`, `npm` is an engine minor.
 
+## Film and cover
+
+`scripts/film.mjs` and `scripts/thumb-film.mjs` are ported from python-expense-tracker / linux-admin.
+The film reads the registry through the shell's `loadRegistry` (no repo `registry.mjs`). The cover's
+card is the real `intro/01-file` render: its command from `session.txt` (72-column wrap undone) and
+its dark shot, cropped to the drawing in the page. The mark is the TypeScript logo (simple-icons'
+path, Microsoft's trademark: typescriptlang.org/branding); `--mark glyph` is our own `<T>`.
+`--theme dark|navy|light`.
+
 ## Not built yet
 
-The Colab notebook (`scripts/colab_generate_audio.ipynb`, ported with `REPO` changed), the `film`
-and `thumb:film` scripts — all from the reference repo, which this session could not reach.
+The Colab notebook (`scripts/colab_generate_audio.ipynb`, ported with `REPO` changed) is not in
+this repo.
