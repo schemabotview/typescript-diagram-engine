@@ -1,0 +1,22 @@
+{
+  "title": "Result<T, E>, and catch (e: unknown)",
+  "from": "load/07-validate",
+  "changes": [
+    "main.ts",
+    "scenes/checkout.json",
+    "src/errors.ts",
+    "src/load.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "capture": [
+    "out/checkout.svg"
+  ],
+  "recorded": {
+    "inputs": "94eda6147a407e66",
+    "outputs": "28bfa6057d1dadaa",
+    "node": "26.13.0"
+  }
+}

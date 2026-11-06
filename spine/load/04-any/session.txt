@@ -1,0 +1,11 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node --stack-trace-limit=1 main.ts
+wrote out/self.svg: 1710 chars
+file:///home/ana/miniflow/src/render/svg.ts:17
+    .replaceAll('&', '&amp;')
+     ^
+
+TypeError: text.replaceAll is not a function
+    at escapeXml (file:///home/ana/miniflow/src/render/svg.ts:17:6)
+
+Node.js v26.13.0

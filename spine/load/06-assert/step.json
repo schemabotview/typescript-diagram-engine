@@ -1,0 +1,22 @@
+{
+  "title": "as vs assertion functions",
+  "from": "load/05-unknown",
+  "changes": [
+    "main.ts",
+    "src/load.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node try.ts",
+    "node --stack-trace-limit=1 main.ts"
+  ],
+  "exit": {
+    "node --stack-trace-limit=1 main.ts": 1
+  },
+  "recorded": {
+    "inputs": "9832219b004e524b",
+    "outputs": "881ca3332575272a",
+    "node": "26.13.0"
+  }
+}

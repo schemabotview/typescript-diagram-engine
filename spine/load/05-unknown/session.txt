@@ -1,0 +1,4 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node main.ts
+wrote out/self.svg: 1710 chars
+scenes/checkout.json: not a scene, skipped

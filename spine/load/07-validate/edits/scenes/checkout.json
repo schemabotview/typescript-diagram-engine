@@ -1,0 +1,129 @@
+{
+  "title": "Checkout",
+  "nodes": [
+    {
+      "type": "note",
+      "id": "why",
+      "text": "one order"
+    },
+    {
+      "type": "group",
+      "id": "client",
+      "title": "Client",
+      "dir": "rows",
+      "children": [
+        {
+          "type": "item",
+          "id": "browser",
+          "title": "Browser",
+          "sub": "the shop page",
+          "tone": "consume"
+        },
+        {
+          "type": "item",
+          "id": "cart",
+          "title": "<Cart>",
+          "sub": "the basket",
+          "tone": "consume"
+        }
+      ]
+    },
+    {
+      "type": "item",
+      "id": "api",
+      "title": "API",
+      "sub": "POST /checkout",
+      "tone": "serve"
+    },
+    {
+      "type": "group",
+      "id": "services",
+      "title": "Services",
+      "dir": "col",
+      "children": [
+        {
+          "type": "item",
+          "id": "payments",
+          "title": "Payments",
+          "sub": "card provider",
+          "tone": "source"
+        },
+        {
+          "type": "item",
+          "id": "inventory",
+          "title": "Inventory",
+          "sub": "reserve stock",
+          "tone": "ingest"
+        },
+        {
+          "type": "item",
+          "id": "queue",
+          "title": "Queue",
+          "sub": "order events",
+          "tone": "infra"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "id": "data",
+      "title": "Data",
+      "dir": "col",
+      "children": [
+        {
+          "type": "item",
+          "id": "orders",
+          "title": "Orders DB",
+          "sub": "one row per order",
+          "tone": "store"
+        },
+        {
+          "type": "item",
+          "id": "api",
+          "title": "Email",
+          "sub": "receipts",
+          "tone": "consume"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "browser",
+      "to": "cart"
+    },
+    {
+      "from": "cart",
+      "to": "api"
+    },
+    {
+      "from": "api",
+      "to": "payments"
+    },
+    {
+      "from": "api",
+      "to": "inventory"
+    },
+    {
+      "from": "api",
+      "to": "queue"
+    },
+    {
+      "from": "payments",
+      "to": "orders",
+      "label": "paid"
+    },
+    {
+      "from": "inventory",
+      "to": "orders"
+    },
+    {
+      "from": "queue",
+      "to": "orders"
+    },
+    {
+      "from": "queue",
+      "to": "email"
+    }
+  ]
+}

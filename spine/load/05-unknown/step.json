@@ -1,0 +1,17 @@
+{
+  "title": "unknown and type guards",
+  "from": "load/04-any",
+  "changes": [
+    "main.ts",
+    "src/load.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "8fec6ca6910abe83",
+    "outputs": "fa7ab25f831eacd7",
+    "node": "26.13.0"
+  }
+}

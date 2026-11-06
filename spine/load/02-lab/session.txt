@@ -1,0 +1,7 @@
+ana@laptop:~/miniflow$ node main.ts
+sync       the script starts
+sync       the script ends
+microtask  a resolved promise
+microtask  queueMicrotask
+timer      setTimeout(0) fires
+I/O        the file has arrived

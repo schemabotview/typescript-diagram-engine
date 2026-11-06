@@ -1,0 +1,21 @@
+{
+  "title": "a validator with paths",
+  "from": "load/06-assert",
+  "changes": [
+    "main.ts",
+    "scenes/checkout.json",
+    "src/load.ts"
+  ],
+  "delete": [
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "3715ad2e235ce6b0",
+    "outputs": "c9fe70925f4eeb7d",
+    "node": "26.13.0"
+  }
+}

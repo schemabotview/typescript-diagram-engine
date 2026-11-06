@@ -1,0 +1,17 @@
+{
+  "title": "async / await and Promise<T>",
+  "from": "route/08-fixed",
+  "changes": [
+    "main.ts",
+    "scenes/self.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "b37220289dd86c26",
+    "outputs": "2f6c07de2dcfadff",
+    "node": "26.13.0"
+  }
+}

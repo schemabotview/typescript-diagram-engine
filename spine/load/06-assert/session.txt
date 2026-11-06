@@ -1,0 +1,13 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node try.ts
+as Scene, so 5 nodes 12
+ana@laptop:~/miniflow$ node --stack-trace-limit=1 main.ts
+wrote out/self.svg: 1710 chars
+file:///home/ana/miniflow/src/load.ts:35
+  if (!isScene(x)) throw new TypeError(`${path} is not a scene`)
+                         ^
+
+TypeError: scenes/checkout.json is not a scene
+    at assertScene (file:///home/ana/miniflow/src/load.ts:35:26)
+
+Node.js v26.13.0

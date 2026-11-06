@@ -1,0 +1,26 @@
+{
+  "title": "JSON.parse, and a trailing comma",
+  "from": "load/01-async",
+  "changes": [
+    "main.ts",
+    "scenes/checkout.json",
+    "src/load.ts"
+  ],
+  "delete": [
+    "scenes/checkout.ts",
+    "scenes/self.ts",
+    "out/checkout.svg"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node --stack-trace-limit=1 main.ts"
+  ],
+  "exit": {
+    "node --stack-trace-limit=1 main.ts": 1
+  },
+  "recorded": {
+    "inputs": "83c4f154b56d9d35",
+    "outputs": "22df6a6ad4c68703",
+    "node": "26.13.0"
+  }
+}

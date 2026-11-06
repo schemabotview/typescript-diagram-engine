@@ -1,0 +1,7 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node main.ts
+wrote out/self.svg: 1710 chars
+scenes/checkout.json: 3 problems
+  nodes[1].dir: expected row | col, got "rows"
+  nodes[4].children[1].id: duplicate id "api"
+  edges[8].to: no node "email"

@@ -24,7 +24,7 @@ const filesOf = (step: string) => {
 }
 
 const EDITOR_ROWS: Record<Variant, number> = { code: 18, run: 9 }
-const COLS = 72
+const COLS = 71 // the editor wraps a 72-character line (measured on load-async)
 const langOf = (path: string) => (/\.(json|js|mjs|cjs)$/.test(path) ? 'js' : /\.ts$/.test(path) ? 'ts' : /\.(sh)$/.test(path) ? 'shell' : 'text') as 'js' | 'ts' | 'shell' | 'text'
 
 /** Lines `a`..`b` of `text` (1-based) as rows on screen, wrapped at COLS. */
@@ -50,8 +50,8 @@ export interface Lesson {
   /** The file in the editor (default: the step's first change). */
   path?: string
   model: string
-  /** Text of each line to highlight; each needle highlights the first line containing it. */
-  focus?: string[]
+  /** Lines to highlight: a needle highlights the first line containing it; a number is a line found by the scene itself. */
+  focus?: (string | number)[]
   /** Explicit ranges instead of the automatic window. */
   show?: [number, number][]
   variant?: Variant
@@ -72,7 +72,7 @@ export function lesson({ step, path, model, focus = [], show, variant, side, edg
   const output = m.panel === 'output' && m.capture?.length
   const transcript = output ? undefined : session(step)
   const v: Variant = variant ?? (output || (transcript && transcript.split('\n').length > terminalRows('code', true)) ? 'run' : 'code')
-  const highlight = focus.map((n) => lineOf(code, n))
+  const highlight = focus.map((n) => (typeof n === 'number' ? n : lineOf(code, n)))
   const shown = show ?? (highlight.length ? windowFor(code, Math.min(...highlight), Math.max(...highlight), EDITOR_ROWS[v]) : windowFor(code, 1, 1, EDITOR_ROWS[v]))
   const pic = output ? m.capture![0] : undefined
   return ide({

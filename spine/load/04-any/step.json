@@ -1,0 +1,19 @@
+{
+  "title": "any lets \"title\": 42 through",
+  "from": "load/03-parse",
+  "changes": [
+    "scenes/checkout.json"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node --stack-trace-limit=1 main.ts"
+  ],
+  "exit": {
+    "node --stack-trace-limit=1 main.ts": 1
+  },
+  "recorded": {
+    "inputs": "3ca83e483f1d3568",
+    "outputs": "1e5eed34619a8961",
+    "node": "26.13.0"
+  }
+}

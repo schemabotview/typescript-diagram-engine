@@ -139,7 +139,7 @@ The faults are real, and each one teaches a lesson:
 | an edge to `paymnet` | checkout | 6.7: a runtime `SceneError`; 10.8: a compile error via `defineScene` |
 | a duplicate id `api` | checkout | 7.7 |
 | `"title": 42` | checkout | 7.4: `any` lets it through, `unknown` does not (7.5) |
-| a trailing comma | checkout | 7.3: `JSON.parse`'s real `SyntaxError` and its position |
+| a trailing comma | checkout | 7.3: `JSON.parse`'s real `SyntaxError` (Node 26 names the line, not a column) |
 | the title `<Cart>` | checkout | 5.8: breaks the SVG until it is escaped |
 | a 60-character title | self | 4.9: wider than its column; the layout grows the column, never clips |
 
@@ -313,11 +313,11 @@ The output is the layout itself: a printed table of rects (`console.table`), unt
 |---|---|---|---|
 | 1 | `async` / `await` and `Promise<T>` | `readFile` from `node:fs/promises` | await = pause here, resume with the value |
 | 2 | ◆ full scene: the event loop | concept + lab (real log order) | call stack → microtasks → the I/O queue; why `await` doesn't block |
-| 3 | `JSON.parse`, and a trailing comma | scenes move to `scenes/*.json`; the real `SyntaxError` with its position | text → parser → value or throw |
+| 3 | `JSON.parse`, and a trailing comma | scenes move to `scenes/*.json` (7.1 writes them); the real `SyntaxError` and its line | text → parser → value or throw |
 | 4 | `any` lets `"title": 42` through | crashes later at `title.length`, far from the cause | `any` turns the checker off |
 | 5 | `unknown` and type guards | `isItem(x): x is Item` | unknown → narrowed by evidence |
 | 6 | `as` vs assertion functions | `data as Scene` lies; `assertScene(x): asserts x is Scene` checks | a claim vs a proof |
-| 7 | A validator with paths | `nodes[1].dir: expected row \| col \| grid, got "rows"`; the duplicate `api` | the walk, with the path at each step |
+| 7 | A validator with paths | `nodes[1].dir: expected row \| col, got "rows"`; the duplicate `api` | the walk, with the path at each step |
 | 8 | `Result<T, E>`, and `catch (e: unknown)` | `{ ok: true, value } \| { ok: false, errors }` | a discriminated union again; the caller must branch |
 
 **8. `command` · Make it a command · 8**

@@ -1,0 +1,16 @@
+{
+  "title": "lab: the event loop, logged",
+  "from": "load/01-async",
+  "changes": [
+    "main.ts"
+  ],
+  "commands": [
+    "node main.ts"
+  ],
+  "lab": true,
+  "recorded": {
+    "inputs": "c082b111367e1f92",
+    "outputs": "1be31df9f1268f9c",
+    "node": "26.13.0"
+  }
+}

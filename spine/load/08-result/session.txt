@@ -1,0 +1,6 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node main.ts
+wrote out/self.svg: 1710 chars
+wrote out/checkout.svg: 3789 chars
+scenes/shop.json: ENOENT: no such file or directory, open 'scenes/shop.j
+son'
