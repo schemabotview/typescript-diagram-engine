@@ -1,0 +1,10 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node main.ts
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="80" font-fam
+ily="monospace" font-size="16">
+  <rect x="1" y="1" width="104" height="44" rx="6" fill="#e8edff" stroke
+="#3b5bdb"/>
+  <text x="13" y="28" fill="#1a1d23">checkout</text>
+</svg>
+
+elements: 2 | empty: 0

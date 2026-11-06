@@ -1,0 +1,20 @@
+{
+  "title": "classes: an SVG document",
+  "from": "layout/08-readonly",
+  "changes": [
+    "main.ts",
+    "src/svg-document.ts"
+  ],
+  "delete": [
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "2b7131bc94be23b1",
+    "outputs": "3d7551f5e21f4812",
+    "node": "26.13.0"
+  }
+}

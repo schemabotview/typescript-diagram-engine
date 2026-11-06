@@ -1,0 +1,7 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try.ts(6,3): error TS2741: Property 'infra' is missing in type '{ neutra
+l: string; source: string; ingest: string; store: string; serve: string;
+ consume: string; }' but required in type 'Record<Tone, string>'.
+ana@laptop:~/miniflow$ node main.ts
+wrote out/checkout.svg: 2293 chars
+ana@laptop:~/miniflow$ xmllint --noout out/checkout.svg

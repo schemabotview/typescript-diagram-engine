@@ -1,0 +1,26 @@
+{
+  "title": "tones become colours",
+  "from": "draw/08-escape",
+  "changes": [
+    "src/palette.ts",
+    "src/render/svg.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts",
+    "xmllint --noout out/checkout.svg"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "capture": [
+    "out/checkout.svg"
+  ],
+  "panel": "output",
+  "recorded": {
+    "inputs": "d6b70beb95994cd1",
+    "outputs": "e031a9aa5aac91e3",
+    "node": "26.13.0"
+  }
+}

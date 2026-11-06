@@ -1,0 +1,22 @@
+{
+  "title": "interfaces as contracts",
+  "from": "draw/04-extends",
+  "changes": [
+    "main.ts",
+    "src/render/outline.ts",
+    "src/render/renderer.ts",
+    "src/render/svg.ts"
+  ],
+  "delete": [
+    "src/render/base.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "4593ca7f5f40592d",
+    "outputs": "9c769cef28de8200",
+    "node": "26.13.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "title": "escaping: <Cart> breaks the file",
+  "from": "draw/07-scene",
+  "changes": [
+    "scenes/checkout.ts"
+  ],
+  "commands": [
+    "node main.ts",
+    "xmllint --noout out/checkout.svg"
+  ],
+  "exit": {
+    "xmllint --noout out/checkout.svg": 1
+  },
+  "recorded": {
+    "inputs": "f301fdfd8db313fd",
+    "outputs": "7292803f3fecbcfd",
+    "node": "26.13.0"
+  }
+}

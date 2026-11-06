@@ -1,0 +1,9 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node --stack-trace-limit=0 main.ts
+file:///home/ana/miniflow/src/svg-document.ts:36
+    return this.rect(r)
+                ^
+
+[TypeError: Cannot read properties of undefined (reading 'rect')]
+
+Node.js v26.13.0

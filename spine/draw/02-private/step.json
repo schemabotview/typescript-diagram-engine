@@ -1,0 +1,22 @@
+{
+  "title": "#private vs private",
+  "from": "draw/01-class",
+  "changes": [
+    "try-hash.ts",
+    "try-private.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node try-private.ts",
+    "node --stack-trace-limit=0 try-hash.ts"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1,
+    "node --stack-trace-limit=0 try-hash.ts": 1
+  },
+  "recorded": {
+    "inputs": "516a92970a3ddc6c",
+    "outputs": "e4e90b97112fa328",
+    "node": "26.13.0"
+  }
+}

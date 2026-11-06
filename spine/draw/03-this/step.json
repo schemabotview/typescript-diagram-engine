@@ -1,0 +1,24 @@
+{
+  "title": "a lost this",
+  "from": "draw/02-private",
+  "changes": [
+    "main.ts",
+    "src/svg-document.ts"
+  ],
+  "delete": [
+    "try-private.ts",
+    "try-hash.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node --stack-trace-limit=0 main.ts"
+  ],
+  "exit": {
+    "node --stack-trace-limit=0 main.ts": 1
+  },
+  "recorded": {
+    "inputs": "6fe2e8ed58ee7f11",
+    "outputs": "e2289857e280492c",
+    "node": "26.13.0"
+  }
+}

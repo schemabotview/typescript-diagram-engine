@@ -1,0 +1,16 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try-hash.ts(4,17): error TS18013: Property '#elements' is not accessible
+ outside class 'SvgDocument' because it has a private identifier.
+try-private.ts(5,23): error TS2341: Property 'elements' is private and o
+nly accessible within class 'Doc'.
+ana@laptop:~/miniflow$ node try-private.ts
+[ '<rect/>' ]
+ana@laptop:~/miniflow$ node --stack-trace-limit=0 try-hash.ts
+file:///home/ana/miniflow/try-hash.ts:4
+console.log(doc.#elements)
+               ^
+
+[SyntaxError: Private field '#elements' must be declared in an enclosing
+ class]
+
+Node.js v26.13.0

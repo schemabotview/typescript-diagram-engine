@@ -1,0 +1,20 @@
+{
+  "title": "inheritance: extends, abstract, protected",
+  "from": "draw/03-this",
+  "changes": [
+    "main.ts",
+    "src/render/base.ts",
+    "src/render/outline.ts",
+    "src/render/svg.ts",
+    "src/svg-document.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "007c4cf266781bcc",
+    "outputs": "b29f20fa751a3590",
+    "node": "26.13.0"
+  }
+}

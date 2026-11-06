@@ -1,0 +1,6 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node main.ts
+outline: 322 chars | Checkout
+svg: 991 chars | <svg xmlns="http://www.w3.org/
+stats: 8 chars | 10 boxes
+count: 11 chars | 5 top-level

@@ -1,0 +1,16 @@
+{
+  "title": "structural typing",
+  "from": "draw/05-interface",
+  "changes": [
+    "main.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "77d4baf90eef35bb",
+    "outputs": "c2442636be728dda",
+    "node": "26.13.0"
+  }
+}

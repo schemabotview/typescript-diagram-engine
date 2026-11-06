@@ -1,0 +1,15 @@
+ana@laptop:~/miniflow$ node main.ts
+wrote out/checkout.svg: 2287 chars
+ana@laptop:~/miniflow$ xmllint --noout out/checkout.svg
+out/checkout.svg:9: parser error : Opening and ending tag mismatch: Cart
+ line 9 and text
+  <text x="336" y="43" fill="#e6e8ec"><Cart></text>
+                                                   ^
+out/checkout.svg:33: parser error : Opening and ending tag mismatch: tex
+t line 9 and svg
+</svg>
+      ^
+out/checkout.svg:34: parser error : Premature end of data in tag svg lin
+e 1
+
+^

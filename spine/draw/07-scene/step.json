@@ -1,0 +1,22 @@
+{
+  "title": "template literals: the whole scene",
+  "from": "draw/06-structural",
+  "changes": [
+    "main.ts",
+    "scenes/checkout.ts",
+    "src/render/svg.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "capture": [
+    "out/checkout.svg"
+  ],
+  "panel": "output",
+  "recorded": {
+    "inputs": "faacf2185b2046f8",
+    "outputs": "2c8a5656079a7874",
+    "node": "26.13.0"
+  }
+}
