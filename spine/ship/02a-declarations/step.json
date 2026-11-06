@@ -1,0 +1,18 @@
+{
+  "title": "isolatedDeclarations asks for types",
+  "from": "ship/01-surface",
+  "changes": [
+    "tsconfig.build.json"
+  ],
+  "commands": [
+    "npm run build --silent"
+  ],
+  "exit": {
+    "npm run build --silent": 1
+  },
+  "recorded": {
+    "inputs": "daceb8c39830d2d0",
+    "outputs": "a0d5ef99097f32b0",
+    "node": "26.13.0"
+  }
+}

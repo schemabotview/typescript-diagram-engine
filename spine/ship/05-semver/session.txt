@@ -1,0 +1,12 @@
+ana@laptop:~/miniflow$ npm run check --silent > /dev/null && echo "minif
+low: check passed"
+miniflow: check passed
+ana@laptop:~/miniflow$ npm version major --no-git-tag-version
+v2.0.0
+ana@laptop:~/miniflow$ npm pack --silent
+miniflow-2.0.0.tgz
+ana@laptop:~/miniflow$ cd examples/shop && npm install --silent ../../mi
+niflow-2.0.0.tgz
+ana@laptop:~/miniflow$ cd examples/shop && npx tsc --noEmit
+main.ts(4,65): error TS2353: Object literal may only specify known prope
+rties, and 'sub' does not exist in type 'Item'.

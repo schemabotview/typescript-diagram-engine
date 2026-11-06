@@ -1,0 +1,11 @@
+ana@laptop:~/miniflow$ npm run build --silent
+ana@laptop:~/miniflow$ ls dist/*.d.ts | wc -l
+15
+ana@laptop:~/miniflow$ cat dist/fit.d.ts
+import type { Size } from './layout.ts';
+export interface Transform {
+    readonly scale: number;
+    readonly dx: number;
+    readonly dy: number;
+}
+export declare function fit(content: Size, frame: Size): Transform;

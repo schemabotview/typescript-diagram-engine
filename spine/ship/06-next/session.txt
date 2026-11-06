@@ -1,0 +1,3 @@
+ana@laptop:~/miniflow$ cd examples/shop && npx tsc --noEmit
+ana@laptop:~/miniflow$ cd examples/shop && node main.ts
+shop.svg drawn with miniflow

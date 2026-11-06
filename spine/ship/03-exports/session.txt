@@ -1,0 +1,52 @@
+ana@laptop:~/miniflow$ npm pack --dry-run --ignore-scripts
+npm notice
+npm notice 📦  miniflow@1.0.0
+npm notice Tarball Contents
+npm notice 31B dist/cli.d.ts
+npm notice 2.0kB dist/cli.js
+npm notice 714B dist/define.d.ts
+npm notice 132B dist/define.js
+npm notice 203B dist/edge.d.ts
+npm notice 213B dist/edge.js
+npm notice 339B dist/errors.d.ts
+npm notice 176B dist/errors.js
+npm notice 218B dist/fit.d.ts
+npm notice 400B dist/fit.js
+npm notice 495B dist/index.d.ts
+npm notice 303B dist/index.js
+npm notice 990B dist/layout.d.ts
+npm notice 2.6kB dist/layout.js
+npm notice 222B dist/load.d.ts
+npm notice 487B dist/load.js
+npm notice 921B dist/model.d.ts
+npm notice 242B dist/model.js
+npm notice 412B dist/palette.d.ts
+npm notice 1.2kB dist/palette.js
+npm notice 213B dist/render/outline.d.ts
+npm notice 971B dist/render/outline.js
+npm notice 267B dist/render/renderer.d.ts
+npm notice 84B dist/render/renderer.js
+npm notice 475B dist/render/svg.d.ts
+npm notice 3.0kB dist/render/svg.js
+npm notice 1.3kB dist/route.d.ts
+npm notice 2.8kB dist/route.js
+npm notice 625B dist/svg-document.d.ts
+npm notice 1.9kB dist/svg-document.js
+npm notice 1.3kB dist/types.d.ts
+npm notice 266B dist/types.js
+npm notice 180B dist/validate.d.ts
+npm notice 2.9kB dist/validate.js
+npm notice 244B dist/watch.d.ts
+npm notice 813B dist/watch.js
+npm notice 732B package.json
+npm notice Tarball Details
+npm notice name: miniflow
+npm notice version: 1.0.0
+npm notice filename: miniflow-1.0.0.tgz
+npm notice package size: 10.2 kB
+npm notice unpacked size: 30.3 kB
+npm notice shasum: f390aea66a0acd39b692dbc914cd6a7c61ddecf2
+npm notice integrity: sha512-8U3/QHFFDH2D7[...]0REKILTSocoOQ==
+npm notice total files: 37
+npm notice
+miniflow-1.0.0.tgz

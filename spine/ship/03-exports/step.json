@@ -1,0 +1,24 @@
+{
+  "title": "package.json exports and files",
+  "from": "ship/02b-dts",
+  "changes": [
+    "package.json"
+  ],
+  "commands": [
+    "npm pack --dry-run --ignore-scripts"
+  ],
+  "setup": [
+    "npm run build --silent"
+  ],
+  "volatile": [
+    "shasum: +\\w+",
+    "integrity: +\\S+",
+    "unpacked size: +[\\d.]+ kB",
+    "package size: +[\\d.]+ kB"
+  ],
+  "recorded": {
+    "inputs": "096f7b8bdc095bd1",
+    "outputs": "81489321f8a12c9a",
+    "node": "26.13.0"
+  }
+}

@@ -1,0 +1,10 @@
+// The public surface: everything a user of miniflow may import. Every export is a promise.
+export type { Edge, Group, Item, Note, Scene, SceneNode, Tone } from './model.ts'
+export { TONE_INFO } from './model.ts'
+export { layout, mono, type Measurer, type Rect, type Size } from './layout.ts'
+export { fit, type Transform } from './fit.ts'
+export { SvgRenderer } from './render/svg.ts'
+export type { Theme } from './palette.ts'
+export { defineScene } from './define.ts'
+export { assertScene, validate } from './validate.ts'
+export { SceneError, type Result } from './errors.ts'

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="419" height="96" font-family="monospace" font-size="16">
+  <defs><marker id="head" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+  <rect x="0" y="0" width="419" height="96" rx="6" fill="#1a1d23" stroke="#1a1d23"/>
+  <rect x="16" y="16" width="101" height="64" rx="6" fill="#3a1f24" stroke="#f87171"/>
+  <text x="28" y="43" fill="#e6e8ec">Web shop</text>
+  <text x="28" y="63" fill="#9aa3b2">React</text>
+  <rect x="149" y="16" width="82" height="64" rx="6" fill="#33261a" stroke="#f59e0b"/>
+  <text x="161" y="43" fill="#e6e8ec">API</text>
+  <text x="161" y="63" fill="#9aa3b2">orders</text>
+  <rect x="263" y="16" width="140" height="64" rx="6" fill="#1b3127" stroke="#34d399"/>
+  <text x="275" y="43" fill="#e6e8ec">Postgres</text>
+  <text x="275" y="63" fill="#9aa3b2">orders table</text>
+  <polyline points="117,48 149,48" fill="none" stroke="#9aa3b2" stroke-width="1.5" marker-end="url(#head)"/>
+  <polyline points="231,48 263,48" fill="none" stroke="#9aa3b2" stroke-width="1.5" marker-end="url(#head)"/>
+</svg>

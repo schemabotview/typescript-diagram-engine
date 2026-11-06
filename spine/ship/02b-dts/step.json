@@ -1,0 +1,17 @@
+{
+  "title": "declaration files",
+  "from": "ship/02a-declarations",
+  "changes": [
+    "src/palette.ts"
+  ],
+  "commands": [
+    "npm run build --silent",
+    "ls dist/*.d.ts | wc -l",
+    "cat dist/fit.d.ts"
+  ],
+  "recorded": {
+    "inputs": "f0fb2f2b1bc3ff4d",
+    "outputs": "2a397537b039c4c9",
+    "node": "26.13.0"
+  }
+}

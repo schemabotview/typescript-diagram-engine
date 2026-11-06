@@ -1,0 +1,20 @@
+{
+  "title": "smoke-test the tarball",
+  "from": "ship/03-exports",
+  "changes": [
+    "examples/shop/main.ts",
+    "examples/shop/package.json",
+    "examples/shop/tsconfig.json"
+  ],
+  "commands": [
+    "npm pack --silent",
+    "cd examples/shop && npm install --silent ../../miniflow-1.0.0.tgz typescript@7.0.2 @types/node@26.6.6",
+    "cd examples/shop && npx tsc --noEmit",
+    "cd examples/shop && node main.ts"
+  ],
+  "recorded": {
+    "inputs": "ddf7bb988ee0b0b9",
+    "outputs": "3770f519c42d9a1f",
+    "node": "26.13.0"
+  }
+}

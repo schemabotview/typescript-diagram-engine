@@ -1,0 +1,24 @@
+{
+  "title": "the consumer moves to 2.0.0",
+  "from": "ship/05-semver",
+  "changes": [
+    "examples/shop/main.ts"
+  ],
+  "commands": [
+    "cd examples/shop && npx tsc --noEmit",
+    "cd examples/shop && node main.ts"
+  ],
+  "capture": [
+    "examples/shop/shop.svg"
+  ],
+  "panel": "output",
+  "setup": [
+    "npm pack --silent > /dev/null",
+    "cd examples/shop && npm ci --silent"
+  ],
+  "recorded": {
+    "inputs": "1403e54a1e2ce15e",
+    "outputs": "993d87e7f00a4d6c",
+    "node": "26.13.0"
+  }
+}

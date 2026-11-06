@@ -1,0 +1,3 @@
+ana@laptop:~/miniflow$ npm run build --silent
+src/palette.ts(18,14): error TS9010: Variable must have an explicit type
+ annotation with --isolatedDeclarations.

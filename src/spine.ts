@@ -68,9 +68,12 @@ export function tree(step: string, opts: { active?: string; added?: string[]; mo
       if (sub) {
         // A folder holding nothing this step touches is drawn closed, as an editor would leave it:
         // the explorer must never grow past the frame's height.
+        // A folder holding only MODIFIED files stays closed and carries their M, so a wide change
+        // (a rename across ten files) cannot grow the explorer either.
         const inside = (f?: string) => !!f && f.startsWith(path + '/')
-        const open = inside(opts.active) || [...(opts.added ?? []), ...(opts.modified ?? [])].some(inside)
-        return open ? { name, children: build(sub, path + '/') } : { name, folder: true }
+        const open = inside(opts.active) || (opts.added ?? []).some(inside)
+        if (open) return { name, children: build(sub, path + '/') }
+        return (opts.modified ?? []).some(inside) ? { name, folder: true, note: 'M' } : { name, folder: true }
       }
       const state = path === opts.active ? 'active' : opts.added?.includes(path) ? 'new' : undefined
       const note = opts.added?.includes(path) ? 'U' : opts.modified?.includes(path) ? 'M' : undefined

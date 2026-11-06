@@ -1,0 +1,14 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node -e "import('./src/index.ts').then((m) => con
+sole.log(Object.keys(m)))"
+[
+  'SceneError',
+  'SvgRenderer',
+  'TONE_INFO',
+  'assertScene',
+  'defineScene',
+  'fit',
+  'layout',
+  'mono',
+  'validate'
+]

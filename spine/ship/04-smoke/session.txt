@@ -1,0 +1,7 @@
+ana@laptop:~/miniflow$ npm pack --silent
+miniflow-1.0.0.tgz
+ana@laptop:~/miniflow$ cd examples/shop && npm install --silent ../../mi
+niflow-1.0.0.tgz typescript@7.0.2 @types/node@26.6.6
+ana@laptop:~/miniflow$ cd examples/shop && npx tsc --noEmit
+ana@laptop:~/miniflow$ cd examples/shop && node main.ts
+shop.svg drawn with miniflow

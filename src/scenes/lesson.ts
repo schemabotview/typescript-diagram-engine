@@ -67,7 +67,8 @@ export function lesson({ step, path, model, focus = [], show, variant, side, edg
   const before = m.from ? new Set(filesOf(m.from)) : new Set<string>()
   const changes = m.changes ?? []
   const after = filesOf(step)
-  const added = after.filter((f) => !before.has(f))
+  // A lockfile npm wrote is listed, never marked: its U would not fit a nested row of the explorer.
+  const added = after.filter((f) => !before.has(f) && !f.endsWith('package-lock.json'))
   const modified = changes.filter((f) => before.has(f))
   const output = m.panel === 'output' && (m.capture?.length || m.page)
   const transcript = output ? undefined : session(step)

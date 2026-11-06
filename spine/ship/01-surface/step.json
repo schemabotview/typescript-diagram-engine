@@ -1,0 +1,16 @@
+{
+  "title": "the public surface",
+  "from": "browser/07-build",
+  "changes": [
+    "src/index.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node -e \"import('./src/index.ts').then((m) => console.log(Object.keys(m)))\""
+  ],
+  "recorded": {
+    "inputs": "6a13179a55ace173",
+    "outputs": "94c12235c54e93e0",
+    "node": "26.13.0"
+  }
+}

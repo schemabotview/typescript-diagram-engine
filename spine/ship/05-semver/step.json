@@ -1,0 +1,34 @@
+{
+  "title": "semver: a breaking change",
+  "from": "ship/04-smoke",
+  "changes": [
+    "scenes/broken.json",
+    "scenes/checkout.json",
+    "scenes/checkout.ts",
+    "scenes/self.json",
+    "src/layout.ts",
+    "src/model.ts",
+    "src/render/outline.ts",
+    "src/render/svg.ts",
+    "src/validate.ts"
+  ],
+  "commands": [
+    "npm run check --silent > /dev/null && echo \"miniflow: check passed\"",
+    "npm version major --no-git-tag-version",
+    "npm pack --silent",
+    "cd examples/shop && npm install --silent ../../miniflow-2.0.0.tgz",
+    "cd examples/shop && npx tsc --noEmit"
+  ],
+  "exit": {
+    "cd examples/shop && npx tsc --noEmit": 1
+  },
+  "volatile": [
+    "Start at.*",
+    "Duration.*"
+  ],
+  "recorded": {
+    "inputs": "05432d0ac68101f1",
+    "outputs": "1842dea412358e6f",
+    "node": "26.13.0"
+  }
+}

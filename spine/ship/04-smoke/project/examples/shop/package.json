@@ -1,0 +1,10 @@
+{
+  "name": "shop",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@types/node": "^26.6.6",
+    "miniflow": "file:../../miniflow-1.0.0.tgz",
+    "typescript": "^7.0.2"
+  }
+}
