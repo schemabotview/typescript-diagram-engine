@@ -48,7 +48,8 @@ component. This film is framework-free on purpose. It uses plain DOM in Course 1
 ## Packaging
 
 **One film: "Learn TypeScript by building a diagram engine: full course, beginner to
-professional"**. It has 12 courses and 86 sections, about 2 h 12 min at a mean of 92 s. It opens
+professional"**. It has 12 courses and 97 sections: 86 lessons at a mean of 92 s, plus 11 course
+openers of about 70 s (see "Course openers"), about 2 h 25 min in all. It opens
 with the finished `miniflow` drawing a scene two ways: as an SVG file, and live in the browser
 with its theme toggled. The last section bridges to the React film.
 
@@ -204,6 +205,13 @@ full-screen output is the intro (1.2), a concept frame with no side pane.
 
 JSON files are drawn with `lang: 'js'` until the engine has `json` (see Open).
 
+**The opener frame** (a concept frame, no side pane; see "Course openers"): the **app map**
+across the top (one chip per course 2–12: done, *this course* ringed, the rest muted); under it,
+**learned so far** (a table, one row per finished course: its TypeScript, and what `miniflow` can
+then do, the second column quoting "After course" above), beside **the app now** (the last real
+output the spine captured at the end of the previous course: its picture as a `figure`, or its
+text as a `console`) over **this course** (what it adds, and the question it answers).
+
 ## The spine
 
 Port `spine.py` from python-expense-tracker. One step = `project/` + `session.txt` +
@@ -229,6 +237,32 @@ Port `spine.py` from python-expense-tracker. One step = `project/` + `session.tx
 ## The courses
 
 Side pane = the diagram. ◆ = detour.
+
+### Course openers
+
+Every course from 2 on opens with **section 0, `recap`** (route `#/<course>-recap`): what we have
+learned up to now, then what this course adds. It is once per COURSE, never per section, and it
+uses the opener frame (see Frames). Nothing in it is new: it re-shows real output the spine already
+captured, so it needs no new spine step. Its narration names the course just finished, walks the
+"learned so far" table, ends with the question this course answers, and bridges into section 1.
+Course 1 has no opener: it IS the film's opener.
+
+| course | learned so far (the new table row) | the app now (previous course's last output) | this course answers |
+|---|---|---|---|
+| 2 start | 1: TypeScript is JavaScript plus types; `tsc` checks, Node erases, V8 runs | nothing yet: an empty folder | how does a `.ts` file run, and who checks it? |
+| 3 model | 2: Node runs `.ts` by stripping types; `tsc --noEmit` checks; erasable syntax only | `out/box.svg`: one box (2.2's picture) | how do you describe a whole scene so a malformed one cannot compile? |
+| 4 layout | 3: inference, literal unions, object types, optional fields, discriminated unions, narrowing, `never` | the printed outline (3.8) | where does each box go? |
+| 5 draw | 4: functions, recursion, `Map`, generics and constraints, generators, `readonly` | the rect table (4.8) | how do the rects become a picture? |
+| 6 route | 5: classes, `#private`, `this`, inheritance, interfaces, structural typing, `Record` + `satisfies` | `out/checkout.svg`, coloured (5.9) | how does an arrow find its way between two boxes? |
+| 7 load | 6: tuples, intersections, pure functions, overloads, custom errors with `cause` | the checkout with its arrows (6.5) | how do we read a scene file we cannot trust? |
+| 8 command | 7: `async`/`await`, the event loop, `unknown`, type guards, assertion functions, `Result` | the validator's paths (7.8) | how does a library become a command? |
+| 9 trust | 8: modules, `parseArgs`, exit codes, a compiled `bin`, async iterators, closures, `AbortController`, `using` | `miniflow watch` re-rendering (8.8) | how do we know it still works tomorrow? |
+| 10 types | 9: strict flags, Vitest, snapshots, type tests, the linter, how `tsc` checks | `npm run check` green (9.8) | can the types be computed from the code we already have? |
+| 11 browser | 10: `keyof`/`typeof`, indexed access, mapped and conditional types, `infer`, brands, template literal types, `const` type parameters | the `paymnet` compile error (10.8) | what changes when the page measures the text? |
+| 12 ship | 11: Vite, DOM types and `null`, events, `ResizeObserver`, a production build | the live page, `localhost:5173` (11.6) | how does someone else install it without breaking? |
+
+The table grows by one row per course, so the opener before Course 12 carries ten rows; its
+"miniflow can" column is the "After course" table above, quoted, never re-worded.
 
 **1. `intro` · TypeScript, and what we'll build · 2**
 
@@ -404,24 +438,28 @@ Output panel for 11.3–11.6 (the live page); terminal for the dev server, the `
 8. No ASCII renderer: miniflow draws SVG only. Grid routing, the 72-column limit and the
    box-drawing glyph risk taught no TypeScript; `SvgDocument` and `OutlineRenderer` carry the
    class and interface lessons instead (2026-11-04).
+9. Each course from 2 opens with a `recap` section (what we have learned so far, and what this
+   course adds), once per course, never per section. It re-shows output the spine already captured,
+   so it adds no spine step, and it runs about 70 s, under the 82 s floor for a lesson, because it
+   teaches nothing new (2026-11-06).
 
 ## Open
 
-- **Engine prerequisite: a `figure` leaf** in graphl-flow, from 2.2 (so before the pilot): a captured PNG at a
-  fixed `w`/`h` in the bottom panel's slot, with a title bar (the file or the URL). Graphl-flow
-  minor, with a fixture and a check (same scale as the terminal it replaces). Also, optionally, a
-  `json` language (Course 7).
+- **Engine prerequisite: a `figure` leaf**: shipped in graphl-flow 0.11.0 (2026-11-06). Still
+  optional: a `json` language (Course 7).
 - **Legibility inside a screenshot.** check-render measures text in the DOM and cannot see inside
   a PNG. The spine must assert instead that miniflow's smallest text lands at ≥ 24 px in the 4K
   frame (its font size × the capture's scale), or the picture fails like an overflowing pane.
-- **Version drift**: `../CLAUDE.md` says graphl-flow 0.8.0, its README 0.9.0, its `package.json`
-  0.10.0. Confirm which version a new repo pins (and ui-shell's peer range) before infra.
+- **Versions** (resolved 2026-11-06): the repo pins graphl-flow 0.11.0 (the `figure` release) and
+  ui-shell 1.1.0, whose peer range `>=0.2.0 <1` admits it.
 - **To verify at infra against TypeScript 7.0.2**: `erasableSyntaxOnly`,
   `rewriteRelativeImportExtensions`, `isolatedDeclarations`, `--extendedDiagnostics` output, and
   whether typescript-eslint 8.72 supports TS 7. If one is missing, the section falls back to TS 6.
 - **Repo name**: `typescript-diagram-engine` (matches `python-expense-tracker`), app `miniflow`.
   OK?
-- **Length**: 86 sections is about 2 h 12 min, longer than the reference's 72. Already cut:
+- **Openers (Decision 9)**: about 70 s each, below the shared 82–120 s range. OK, or hold them to
+  82 s?
+- **Length**: 86 lessons + 11 openers is about 2 h 25 min, longer than the reference's 72. Already cut:
   `Promise.all`, loading a dropped file, and a separate `as const` section.
 - **Deferred:** React (the sequel), publishing to the real npm registry (the film stops at a
   tarball), decorators, namespaces and declaration merging, variance annotations (`in`/`out`),
