@@ -1,0 +1,23 @@
+{
+  "title": "a bin, compiled",
+  "from": "command/05a-bin-ts",
+  "changes": [
+    "package.json",
+    "tsconfig.json"
+  ],
+  "commands": [
+    "npm run build --silent",
+    "ls -C dist",
+    "npm pack --silent",
+    "cd ../shop && npm install --silent ../miniflow/miniflow-1.0.0.tgz",
+    "cd ../shop && npx miniflow check ../miniflow/scenes/self.json"
+  ],
+  "setup": [
+    "rm -rf ../shop && mkdir ../shop && cd ../shop && npm init -y > /dev/null"
+  ],
+  "recorded": {
+    "inputs": "b1a567283a119bc4",
+    "outputs": "3e8b97099657cc4b",
+    "node": "26.13.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "title": "arguments with parseArgs",
+  "from": "command/01-modules",
+  "changes": [
+    "src/cli.ts"
+  ],
+  "delete": [
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node src/cli.ts render scenes/checkout.json --svg out/checkout.svg"
+  ],
+  "recorded": {
+    "inputs": "e629f29eb7d0383a",
+    "outputs": "f120e5839185e4b6",
+    "node": "26.13.0"
+  }
+}

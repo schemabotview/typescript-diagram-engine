@@ -1,0 +1,12 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node src/cli.ts check scenes/self.json; echo "exi
+t $?"
+scenes/self.json: ok
+exit 0
+ana@laptop:~/miniflow$ node src/cli.ts check scenes/broken.json; echo "e
+xit $?"
+scenes/broken.json: nodes[1].dir: expected row | col, got "rows"
+exit 1
+ana@laptop:~/miniflow$ node src/cli.ts check scenes/broken.json 2> /dev/
+null; echo "exit $?"
+exit 1

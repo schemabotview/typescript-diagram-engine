@@ -1,0 +1,27 @@
+{
+  "title": "modules: import, export, import type",
+  "from": "load/08-result",
+  "changes": [
+    "src/cli.ts",
+    "try.ts",
+    "tsconfig.json"
+  ],
+  "delete": [
+    "main.ts",
+    "src/tree.ts",
+    "out/self.svg",
+    "out/checkout.svg"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node src/cli.ts"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "d95dcd2b3ee56ca0",
+    "outputs": "71776ca614a67230",
+    "node": "26.13.0"
+  }
+}

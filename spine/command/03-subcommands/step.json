@@ -1,0 +1,21 @@
+{
+  "title": "subcommands as a union",
+  "from": "command/02-args",
+  "changes": [
+    "src/cli.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node src/cli.ts render scenes/self.json",
+    "node src/cli.ts check scenes/self.json",
+    "node src/cli.ts draw scenes/self.json"
+  ],
+  "exit": {
+    "node src/cli.ts draw scenes/self.json": 2
+  },
+  "recorded": {
+    "inputs": "e1fe2f69118f8bdc",
+    "outputs": "a0a3cadeb595254b",
+    "node": "26.13.0"
+  }
+}

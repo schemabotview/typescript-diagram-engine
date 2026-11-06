@@ -41,7 +41,8 @@ HOME = Path(os.environ.get('SPINE_HOME', '/home/ana'))
 WORK = HOME / 'miniflow'
 PROMPT = 'ana@laptop:~/miniflow$ '
 COLS = 72
-# Never compared, never snapshotted: dependencies are restored from the lockfile, builds are rebuilt.
+# Never compared, never snapshotted: dependencies are restored from the lockfile, builds are rebuilt,
+# and a packed tarball (.tgz) is an output of `npm pack`, re-made by the step that needs it.
 SKIP = {'node_modules', 'dist'}
 FINGERPRINT_KEYS = ('inputs', 'outputs')
 
@@ -76,7 +77,7 @@ def files(root: Path) -> dict[str, bytes]:
         return out
     for p in sorted(root.rglob('*')):
         rel = p.relative_to(root)
-        if rel.parts[0] in SKIP or not p.is_file():
+        if rel.parts[0] in SKIP or rel.suffix == '.tgz' or not p.is_file():
             continue
         out[rel.as_posix()] = p.read_bytes()
     return out

@@ -5,8 +5,9 @@ import { LAYOUT } from './layout'
 import { DRAW } from './draw'
 import { ROUTE } from './route'
 import { LOAD } from './load'
+import { COMMAND } from './command'
 
-const SCENES: Record<string, SceneModel> = { ...START, ...MODEL, ...LAYOUT, ...DRAW, ...ROUTE, ...LOAD }
+const SCENES: Record<string, SceneModel> = { ...START, ...MODEL, ...LAYOUT, ...DRAW, ...ROUTE, ...LOAD, ...COMMAND }
 
 export const getScene = (id: string): SceneModel | undefined => SCENES[id]
 export const sceneIds = () => Object.keys(SCENES)

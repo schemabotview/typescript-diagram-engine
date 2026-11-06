@@ -1,0 +1,5 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ timeout 3 node src/cli.ts watch scenes
+watching scenes/
+change: self.json
+wrote out/self.svg

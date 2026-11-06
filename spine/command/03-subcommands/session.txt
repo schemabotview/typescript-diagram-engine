@@ -1,0 +1,7 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node src/cli.ts render scenes/self.json
+wrote out/self.svg
+ana@laptop:~/miniflow$ node src/cli.ts check scenes/self.json
+check: not yet
+ana@laptop:~/miniflow$ node src/cli.ts draw scenes/self.json
+usage: miniflow <render | check | watch> <path> [--svg file]

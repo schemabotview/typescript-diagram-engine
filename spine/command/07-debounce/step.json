@@ -1,0 +1,22 @@
+{
+  "title": "debounce: closures and timer types",
+  "from": "command/06-watch",
+  "changes": [
+    "src/watch.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "timeout 3 node src/cli.ts watch scenes"
+  ],
+  "setup": [
+    "setsid sh -c 'sleep 1; cp scenes/self.json .save && cp .save scenes/self.json && rm .save; sleep 0.1; cp scenes/self.json .save && cp .save scenes/self.json && rm .save; sleep 0.1; cp scenes/self.json .save && cp .save scenes/self.json && rm .save' > /dev/null 2>&1 < /dev/null &"
+  ],
+  "exit": {
+    "timeout 3 node src/cli.ts watch scenes": 124
+  },
+  "recorded": {
+    "inputs": "42bfb3de851e8a5f",
+    "outputs": "25232a669a88ec1c",
+    "node": "26.13.0"
+  }
+}

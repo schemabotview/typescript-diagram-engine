@@ -1,0 +1,33 @@
+ana@laptop:~/miniflow$ npm pack --silent
+miniflow-1.0.0.tgz
+ana@laptop:~/miniflow$ cd ../shop && npm install --silent ../miniflow/mi
+niflow-1.0.0.tgz
+ana@laptop:~/miniflow$ cd ../shop && npx miniflow check ../miniflow/scen
+es/self.json
+node:internal/modules/typescript:155
+    throw new ERR_UNSUPPORTED_NODE_MODULES_TYPE_STRIPPING(filename);
+          ^
+
+Error [ERR_UNSUPPORTED_NODE_MODULES_TYPE_STRIPPING]: Stripping types is 
+currently unsupported for files under node_modules, for "file:///home/an
+a/shop/node_modules/miniflow/src/cli.ts"
+    at Object.stripTypeScriptModuleTypes (node:internal/modules/typescri
+pt:155:11)
+    at stripTypeScriptModuleTypes (node:internal/modules/esm/translators
+:35:49)
+    at ModuleLoader.<anonymous> (node:internal/modules/esm/translators:6
+88:29)
+    at #translate (node:internal/modules/esm/loader:441:20)
+    at afterLoad (node:internal/modules/esm/loader:509:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:5
+14:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/load
+er:567:36)
+    at afterResolve (node:internal/modules/esm/loader:614:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/load
+er:620:12)
+    at node:internal/modules/esm/loader:639:32 {
+  code: 'ERR_UNSUPPORTED_NODE_MODULES_TYPE_STRIPPING'
+}
+
+Node.js v26.13.0

@@ -1,0 +1,6 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try.ts(1,10): error TS1484: 'Scene' is a type and must be imported using
+ a type-only import when 'verbatimModuleSyntax' is enabled.
+ana@laptop:~/miniflow$ node src/cli.ts
+wrote out/self.svg
+wrote out/checkout.svg

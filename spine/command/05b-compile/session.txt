@@ -1,0 +1,11 @@
+ana@laptop:~/miniflow$ npm run build --silent
+ana@laptop:~/miniflow$ ls -C dist
+cli.js   errors.js  layout.js  model.js    render    svg-document.js
+edge.js  fit.js     load.js    palette.js  route.js
+ana@laptop:~/miniflow$ npm pack --silent
+miniflow-1.0.0.tgz
+ana@laptop:~/miniflow$ cd ../shop && npm install --silent ../miniflow/mi
+niflow-1.0.0.tgz
+ana@laptop:~/miniflow$ cd ../shop && npx miniflow check ../miniflow/scen
+es/self.json
+../miniflow/scenes/self.json: ok

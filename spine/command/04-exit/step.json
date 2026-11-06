@@ -1,0 +1,19 @@
+{
+  "title": "exit codes and stderr",
+  "from": "command/03-subcommands",
+  "changes": [
+    "scenes/broken.json",
+    "src/cli.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node src/cli.ts check scenes/self.json; echo \"exit $?\"",
+    "node src/cli.ts check scenes/broken.json; echo \"exit $?\"",
+    "node src/cli.ts check scenes/broken.json 2> /dev/null; echo \"exit $?\""
+  ],
+  "recorded": {
+    "inputs": "699ed8c5707ea850",
+    "outputs": "93bec6f76cdd3e99",
+    "node": "26.13.0"
+  }
+}

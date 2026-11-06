@@ -1,0 +1,24 @@
+{
+  "title": "a bin that points at .ts",
+  "from": "command/04-exit",
+  "changes": [
+    "package.json",
+    "src/cli.ts"
+  ],
+  "commands": [
+    "npm pack --silent",
+    "cd ../shop && npm install --silent ../miniflow/miniflow-1.0.0.tgz",
+    "cd ../shop && npx miniflow check ../miniflow/scenes/self.json"
+  ],
+  "setup": [
+    "rm -rf ../shop && mkdir ../shop && cd ../shop && npm init -y > /dev/null"
+  ],
+  "exit": {
+    "cd ../shop && npx miniflow check ../miniflow/scenes/self.json": 1
+  },
+  "recorded": {
+    "inputs": "00e0a5fdcc103869",
+    "outputs": "644c6b960159382d",
+    "node": "26.13.0"
+  }
+}
