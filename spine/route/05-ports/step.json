@@ -1,0 +1,21 @@
+{
+  "title": "ports on a shared face",
+  "from": "route/04-route",
+  "changes": [
+    "src/render/svg.ts",
+    "src/route.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "capture": [
+    "out/checkout.svg"
+  ],
+  "panel": "output",
+  "recorded": {
+    "inputs": "42de42457ef059fa",
+    "outputs": "baae73c30196b3b6",
+    "node": "26.13.0"
+  }
+}

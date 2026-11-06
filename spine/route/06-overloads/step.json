@@ -1,0 +1,22 @@
+{
+  "title": "overloads",
+  "from": "route/05-ports",
+  "changes": [
+    "main.ts",
+    "scenes/checkout.ts",
+    "src/edge.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "e0d1b6c9be8dc3d4",
+    "outputs": "f87ea522c7d8af8b",
+    "node": "26.13.0"
+  }
+}

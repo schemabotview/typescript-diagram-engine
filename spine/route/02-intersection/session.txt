@@ -1,0 +1,4 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node main.ts
+api at 452 0 centre [ 531.5, 32 ]
+orders at 844 44 centre [ 938, 76 ]

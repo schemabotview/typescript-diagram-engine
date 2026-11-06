@@ -1,0 +1,16 @@
+{
+  "title": "lab: one edge, routed step by step",
+  "from": "route/05-ports",
+  "changes": [
+    "main.ts"
+  ],
+  "commands": [
+    "node main.ts"
+  ],
+  "lab": true,
+  "recorded": {
+    "inputs": "f0c87fabba3895fa",
+    "outputs": "561d9358a925381c",
+    "node": "26.13.0"
+  }
+}

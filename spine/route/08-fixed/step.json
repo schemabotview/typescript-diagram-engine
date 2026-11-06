@@ -1,0 +1,19 @@
+{
+  "title": "the typo fixed",
+  "from": "route/07-unknown",
+  "changes": [
+    "scenes/checkout.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "capture": [
+    "out/checkout.svg"
+  ],
+  "recorded": {
+    "inputs": "ef901cc103930394",
+    "outputs": "02cb6043379e1681",
+    "node": "26.13.0"
+  }
+}

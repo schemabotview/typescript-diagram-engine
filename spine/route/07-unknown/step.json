@@ -1,0 +1,25 @@
+{
+  "title": "an edge to an unknown id",
+  "from": "route/06-overloads",
+  "changes": [
+    "main.ts",
+    "scenes/checkout.ts",
+    "src/errors.ts",
+    "src/render/svg.ts"
+  ],
+  "delete": [
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node --stack-trace-limit=1 main.ts"
+  ],
+  "exit": {
+    "node --stack-trace-limit=1 main.ts": 1
+  },
+  "recorded": {
+    "inputs": "2b0309750ebfb542",
+    "outputs": "317d5ea4121a9bb1",
+    "node": "26.13.0"
+  }
+}

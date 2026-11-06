@@ -1,0 +1,29 @@
+{
+  "title": "the router, as pure functions",
+  "from": "route/02-intersection",
+  "changes": [
+    "main.ts",
+    "scenes/checkout.ts",
+    "src/layout.ts",
+    "src/model.ts",
+    "src/render/svg.ts",
+    "src/route.ts",
+    "src/svg-document.ts"
+  ],
+  "delete": [
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "capture": [
+    "out/checkout.svg"
+  ],
+  "panel": "output",
+  "recorded": {
+    "inputs": "f941dc71ceb96daa",
+    "outputs": "7fd80b4d35bfc3c1",
+    "node": "26.13.0"
+  }
+}

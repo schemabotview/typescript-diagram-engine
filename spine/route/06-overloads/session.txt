@@ -1,0 +1,8 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try.ts(3,6): error TS2345: Argument of type 'string' is not assignable t
+o parameter of type '{ from: string; to: string; label?: string | undefi
+ned; }'.
+ana@laptop:~/miniflow$ node main.ts
+{ from: 'api', to: 'queue' }
+{ from: 'payments', to: 'orders', label: 'paid' }
+{ from: 'inventory', to: 'orders' }

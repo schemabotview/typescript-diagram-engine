@@ -1,0 +1,3 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node main.ts
+wrote out/checkout.svg: 3773 chars

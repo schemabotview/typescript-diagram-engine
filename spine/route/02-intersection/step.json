@@ -1,0 +1,20 @@
+{
+  "title": "intersection types",
+  "from": "route/01-tuples",
+  "changes": [
+    "main.ts",
+    "src/route.ts"
+  ],
+  "delete": [
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "c8b9f7230fcbc755",
+    "outputs": "fe6ee66ef4372b84",
+    "node": "26.13.0"
+  }
+}

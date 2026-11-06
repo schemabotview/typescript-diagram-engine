@@ -1,0 +1,10 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try.ts(4,3): error TS2540: Cannot assign to '0' because it is a read-onl
+y property.
+try.ts(5,7): error TS2322: Type '[number, number, number]' is not assign
+able to type 'Pt'.
+  Source has 3 element(s) but target allows only 2.
+ana@laptop:~/miniflow$ node main.ts
+starts at x 620 y 32
+points: 620,32 642,32 642,116 664,116
+length: 128

@@ -292,7 +292,7 @@ The output is the layout itself: a printed table of rects (`console.table`), unt
 | 5 | Interfaces as contracts | `interface Renderer`; the base class goes: composition over inheritance | one contract, two implementations |
 | 6 | Structural typing | a plain object literal is a `Renderer` too; no `implements` needed (vs Java's nominal) | shapes, not names |
 | 7 | Template literals: the whole scene | `out/checkout.svg`: every box laid out by Course 4 (output panel) | rects → `<rect>` / `<text>` elements |
-| 8 | Escaping: `<Cart>` breaks the file | the real parse error; `escapeXml` | text vs markup; one function at the boundary |
+| 8 | Escaping: `<Cart>` breaks the file | `xmllint` shows the real parse error; `escapeXml` (applied in 5.9) | text vs markup; one function at the boundary |
 | 9 | Tones become colours | `Record<Tone, string>` per theme, `satisfies`; a missing tone refused, then the coloured render (output panel) | the palette: tone × theme |
 
 **6. `route` · Draw the arrows · 7**
@@ -301,7 +301,7 @@ The output is the layout itself: a printed table of rects (`console.table`), unt
 |---|---|---|---|
 | 1 | Points and segments: tuples | `type Pt = readonly [x: number, y: number]` | a polyline as points |
 | 2 | Intersection types | `type Placed = Rect & { id: string }` | two shapes joined into one |
-| 3 | ◆ full scene: how an edge is routed | concept + lab | the two sides → the lowest common ancestor → the larger gap → faces → an orthogonal path |
+| 3 | ◆ full scene: how an edge is routed | concept + lab (one edge, logged) | two rects → the gaps (side by side or stacked) → faces → ports → an orthogonal path |
 | 4 | The router, as pure functions | `route(from, to, rects): Pt[]`; the arrows drawn (output panel) | rects in, points out: no state |
 | 5 | Ports on a shared face | three edges into `orders`: sort and spread (output panel) | a face with three ports, evenly spaced |
 | 6 | Overloads | `edge('api', 'orders')` and `edge({ from, to, label })` | two signatures, one implementation |

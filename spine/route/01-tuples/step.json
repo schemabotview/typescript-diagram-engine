@@ -1,0 +1,21 @@
+{
+  "title": "points and segments: tuples",
+  "from": "draw/09-tones",
+  "changes": [
+    "main.ts",
+    "src/route.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "21b8b10ac75496d6",
+    "outputs": "f09b364b7a91d57b",
+    "node": "26.13.0"
+  }
+}

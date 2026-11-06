@@ -1,0 +1,8 @@
+ana@laptop:~/miniflow$ node main.ts
+edge     queue -> orders
+rects    queue at 551,220  orders at 756,44
+gaps     x 65  y 112
+faces    queue right -> orders left
+ports    0.33 along right, 0.75 along left
+anchors  691,241 -> 756,92
+path     (691,241) (723.5,241) (723.5,92) (756,92)

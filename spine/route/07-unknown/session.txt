@@ -1,0 +1,13 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node --stack-trace-limit=1 main.ts
+file:///home/ana/miniflow/src/render/svg.ts:69
+        throw new SceneError(`${what} cannot be drawn`, {
+              ^
+
+SceneError: edge 2 (api -> paymnet) cannot be drawn
+    at file:///home/ana/miniflow/src/render/svg.ts:69:15 {
+  [cause]: RangeError: no node has the id "paymnet"
+      at file:///home/ana/miniflow/src/render/svg.ts:70:18
+}
+
+Node.js v26.13.0
