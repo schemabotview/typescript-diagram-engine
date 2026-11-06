@@ -1,0 +1,8 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try.ts(10,14): error TS2322: Type 'SceneNode' is not assignable to type 
+'"probe"'.
+  Type 'Group' is not assignable to type '"probe"'.
+try.ts(11,14): error TS2322: Type 'Map<string, Rect>' is not assignable 
+to type '"probe"'.
+try.ts(12,14): error TS2322: Type 'Pt' is not assignable to type '"probe
+"'.

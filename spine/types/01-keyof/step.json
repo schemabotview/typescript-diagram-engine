@@ -1,0 +1,22 @@
+{
+  "title": "typeof and keyof: types from values",
+  "from": "trust/08-check",
+  "changes": [
+    "src/load.ts",
+    "src/model.ts",
+    "try.ts",
+    "tsconfig.json"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node src/cli.ts check scenes/checkout.json"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "1c94073a6ac95f35",
+    "outputs": "60ead0c22714ffa6",
+    "node": "26.13.0"
+  }
+}

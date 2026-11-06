@@ -1,0 +1,19 @@
+{
+  "title": "conditional types",
+  "from": "types/03-mapped",
+  "changes": [
+    "src/types.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "6e8732590796ec85",
+    "outputs": "638dd4f2ccf71405",
+    "node": "26.13.0"
+  }
+}

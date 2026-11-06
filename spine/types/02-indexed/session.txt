@@ -1,0 +1,10 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try.ts(7,14): error TS2322: Type '"consume" | "infra" | "ingest" | "neut
+ral" | "serve" | "source" | "store" | undefined' is not assignable to ty
+pe '"probe"'.
+  Type 'undefined' is not assignable to type '"probe"'.
+try.ts(8,14): error TS2322: Type '"group" | "item" | "note"' is not assi
+gnable to type '"probe"'.
+  Type '"group"' is not assignable to type '"probe"'.
+try.ts(9,14): error TS2322: Type 'string' is not assignable to type '"pr
+obe"'.

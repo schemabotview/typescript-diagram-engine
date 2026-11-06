@@ -7,7 +7,8 @@ import { route } from './route'
 import { load } from './load'
 import { command } from './command'
 import { trust } from './trust'
+import { types } from './types'
 
 // Courses in film order. Course 1 (`intro`) shows the FINISHED app, so it is authored last and
 // inserted first.
-export const COURSES: Record<string, Course> = { start, model, layout, draw, route, load, command, trust }
+export const COURSES: Record<string, Course> = { start, model, layout, draw, route, load, command, trust, types }

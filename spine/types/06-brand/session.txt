@@ -1,0 +1,9 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try.ts(8,11): error TS2345: Argument of type 'string' is not assignable 
+to parameter of type 'NodeId'.
+  Type 'string' is not assignable to type '{ readonly __brand: "NodeId";
+ }'.
+try.ts(11,11): error TS2345: Argument of type 'string' is not assignable
+ to parameter of type 'NodeId'.
+  Type 'string' is not assignable to type '{ readonly __brand: "NodeId";
+ }'.

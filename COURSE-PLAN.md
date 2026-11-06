@@ -348,7 +348,7 @@ The output is the layout itself: a printed table of rects (`console.table`), unt
 
 **10. `types` · Types that compute · 8**
 
-Each section derives a type from code the viewer already has; the course ends with the payoff.
+Each section derives a type from code the viewer already has; the course ends with the payoff. A section shows a computed type with a *probe*: `try.ts` assigns it to the literal type `'probe'`, and `tsc`'s real error prints the type (TS 7 widens literal unions in messages against `number`, not against a literal).
 
 | # | Section | Step | Side pane |
 |---|---|---|---|
@@ -358,7 +358,7 @@ Each section derives a type from code the viewer already has; the course ends wi
 | 4 | Conditional types | `NodeOf<'group'>` is `Group`; distributes over the union | the union filtered, member by member |
 | 5 | `infer` | `ElementOf<T>`, a hand-made `ReturnType` | a pattern match on a type |
 | 6 | Branded ids | `NodeId` vs `string`; a label passed as an id is refused | a brand: same runtime, different type |
-| 7 | Template literal types: addresses | `` `${string}.L${number}` ``; `checkout.L0` ok, `checkout.0` refused | the address grammar |
+| 7 | Template literal types: addresses | `` `${string}.${Side}` `` (a port on a face); `api.right` ok, `api.rigth` and `api` refused | the address grammar |
 | 8 | `const` type parameters: the typo caught at compile time | `defineScene({ … })`: the `paymnet` edge from 6.7 is now a COMPILE error | the scene's ids flow into the edge type |
 
 **11. `browser` · Run it in a browser · 7**

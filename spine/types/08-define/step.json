@@ -1,0 +1,25 @@
+{
+  "title": "const type parameters: the typo caught at compile time",
+  "from": "types/07-template",
+  "changes": [
+    "scenes/checkout.ts",
+    "src/define.ts",
+    "src/layout.ts",
+    "src/model.ts",
+    "tsconfig.json"
+  ],
+  "delete": [
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "d3bf3c05609f5c35",
+    "outputs": "d13944fbd96f2292",
+    "node": "26.13.0"
+  }
+}

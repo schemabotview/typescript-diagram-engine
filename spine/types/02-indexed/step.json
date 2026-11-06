@@ -1,0 +1,19 @@
+{
+  "title": "indexed access types",
+  "from": "types/01-keyof",
+  "changes": [
+    "src/load.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "60c2cdfa89629625",
+    "outputs": "0a7c900ff0fb7149",
+    "node": "26.13.0"
+  }
+}

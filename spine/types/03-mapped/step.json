@@ -1,0 +1,19 @@
+{
+  "title": "mapped types",
+  "from": "types/02-indexed",
+  "changes": [
+    "src/types.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "ec22408ed4ba0d89",
+    "outputs": "41aef60304566276",
+    "node": "26.13.0"
+  }
+}

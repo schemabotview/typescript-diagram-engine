@@ -1,0 +1,19 @@
+{
+  "title": "the typo fixed: the gate green",
+  "from": "types/08-define",
+  "changes": [
+    "scenes/checkout.ts"
+  ],
+  "commands": [
+    "npm run check"
+  ],
+  "volatile": [
+    "Start at +\\d\\d:\\d\\d:\\d\\d",
+    "Duration +\\d+m?s.*"
+  ],
+  "recorded": {
+    "inputs": "ee34b10618339271",
+    "outputs": "1a09fd49b12364a1",
+    "node": "26.13.0"
+  }
+}

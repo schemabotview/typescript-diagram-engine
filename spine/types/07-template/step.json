@@ -1,0 +1,20 @@
+{
+  "title": "template literal types: addresses",
+  "from": "types/06-brand",
+  "changes": [
+    "src/types.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node try.ts"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "04fc358cae29607e",
+    "outputs": "b9faf37cfa35c30e",
+    "node": "26.13.0"
+  }
+}

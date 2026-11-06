@@ -1,0 +1,19 @@
+{
+  "title": "infer",
+  "from": "types/04-conditional",
+  "changes": [
+    "src/types.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "766aee3a90096711",
+    "outputs": "7378604fd8a210e7",
+    "node": "26.13.0"
+  }
+}

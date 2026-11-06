@@ -1,0 +1,4 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+scenes/checkout.ts(42,20): error TS2322: Type '"paymnet"' is not assigna
+ble to type '"api" | "browser" | "cart" | "client" | "data" | "email" | 
+"inventory" | "orders" | "payments" | "queue" | "services" | "why"'.

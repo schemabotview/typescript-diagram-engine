@@ -1,0 +1,6 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try.ts(7,14): error TS2322: Type 'Group' is not assignable to type '"pro
+be"'.
+try.ts(8,14): error TS2322: Type 'NodeOf<"item" | "note">' is not assign
+able to type '"probe"'.
+  Type 'Item' is not assignable to type '"probe"'.

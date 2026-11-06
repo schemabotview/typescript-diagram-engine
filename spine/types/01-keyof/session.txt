@@ -1,0 +1,9 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try.ts(6,14): error TS2322: Type '"keeps data"' is not assignable to typ
+e '"probe"'.
+try.ts(7,14): error TS2322: Type '"consume" | "infra" | "ingest" | "neut
+ral" | "serve" | "source" | "store"' is not assignable to type '"probe"'
+.
+  Type '"consume"' is not assignable to type '"probe"'.
+ana@laptop:~/miniflow$ node src/cli.ts check scenes/checkout.json
+scenes/checkout.json: ok
