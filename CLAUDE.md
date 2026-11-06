@@ -64,8 +64,8 @@ only the FIRST course, so it shot nothing for any other (worth fixing in ui-shel
   opens only folders holding the active or a new file; a folder of modified files shows `M` closed.
 - `src/scenes/lesson.ts` builds a step section from its `step.json`: explorer marks, terminal or
   output panel, variant, and an editor window around `focus` (the editor wraps at 71 columns).
-- `src/scenes/console.ts`: the console frame (Decision 12) for a transcript too long for any IDE
-  terminal (9.3, 9.4, 12.3); ≤ 52 rows keeps text ≥ 24 px.
+- Every step section is an IDE frame (Decision 12): a report too long for the terminal is saved
+  (`> test.log 2>&1`) or piped, and the terminal greps the part the section teaches (9.3, 9.4, 12.3).
 - Course 10 shows computed types with a probe: `const p: 'probe' = value` in `try.ts`.
 
 ## Gotchas found authoring

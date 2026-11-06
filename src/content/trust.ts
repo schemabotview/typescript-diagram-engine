@@ -41,13 +41,13 @@ A test that only ever passes proves little. What counts is what it says when the
       id: 'failing',
       title: 'A failing test',
       scene: 'trust-failing',
-      narration: `Here is a bug of the most ordinary kind. In the port function, someone tidies up the formula and drops the plus one from the bottom. Each port is now its position divided by the number of ports, instead of by one more than that. It looks almost the same. The checker has nothing to say: every number is still a number.
+      narration: `Here is a bug of the most ordinary kind. In the port function, highlighted, someone tidies up the formula and drops the plus one from the bottom. Each port is now its position divided by the number of ports, instead of by one more than that. It looks almost the same. The checker has nothing to say: every number is still a number.
 
-The test runner does. The terminal shows the whole report. One test failed: spreads three edges over one face, in order. The assertion error says the received list starts with zero point three three, where the expected one starts with zero point two five.
+The test runner does. Its full report is long, so the terminal saves it to a file, test dot log, and prints the exit code: one, a failure. Then grep pulls out the part that matters most, the diff. Every line of it starts with a minus or a plus.
 
-Then comes the most useful part, the diff, highlighted. Minus lines are what the test expected: a quarter, a half, three quarters. Plus lines are what the code returned: a third, two thirds, and one. The side pane's table lines them up. The last one is the real problem. A port at one is the very end of the face, the corner of the box, where the arrowhead would sit on the border.
+Minus lines are what the test expected: a quarter, a half, three quarters. Plus lines are what the code returned: a third, two thirds, and one. The side pane's table lines them up. The last one is the real problem. A port at one is the very end of the face, the corner of the box, where the arrowhead would sit on the border.
 
-Below the diff, the runner points at the line of the test that failed, with the source around it. And the summary at the bottom counts one failed and four passed.
+The last command finds the summary in the same log: one failed and four passed. The rest of the report, with the name of the test and the exact line that failed, stays in the file for whoever needs it, and the side pane names that line.
 
 Notice how much the test knew that the checker could not. It knew what the spread is supposed to be, because a person wrote that down when they understood it. A test is a fact about behaviour, recorded while it was right.
 
@@ -61,7 +61,7 @@ The plus one goes back, and the test passes again. Next, a test for the whole pi
 
 The new test loads the checkout, draws it, and expects the SVG to match its snapshot. On the first run, there is no snapshot yet, so Vitest writes one: a file in a snapshots folder beside the test, holding the exact SVG. That run passed, and the side pane shows the stored picture on the left.
 
-Then a change. Someone enlarges the arrowheads in the SVG document class, a marker width of eight becomes ten. It is a single attribute in one line. The terminal shows the next test run. Snapshot mismatched, and then the diff, highlighted. The minus line is the stored defs element, with a marker width of eight. The plus line is the new one, with ten. Around them, a few unchanged lines for context: the opening svg tag, the canvas rect, the first box.
+Then a change. Someone enlarges the arrowheads in the SVG document class, highlighted: a marker width of eight becomes ten. It is a single attribute in one line. The terminal runs the tests into test dot log again, and the exit code is one. Grep shows the diff. The minus line is the stored defs element, with a marker width of eight. The plus line is the new one, with ten. Nothing else in several kilobytes of SVG moved. The last command finds the verdict: one snapshot failed, and one test of six.
 
 A snapshot does not know whether a change is right. It only knows that something changed. So the failure is a question to the person who made it, as the note says. If the change was intended, run the tests with the update flag and the recording is replaced, and the new snapshot goes into the commit for review. If it was not intended, the test just caught a regression that no other test would have.
 

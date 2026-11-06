@@ -13,7 +13,7 @@
     "cd examples/shop && node main.ts"
   ],
   "recorded": {
-    "inputs": "3734a37c5c8885df",
+    "inputs": "3bad1957e68aa5a1",
     "outputs": "3770f519c42d9a1f",
     "node": "26.13.0"
   }

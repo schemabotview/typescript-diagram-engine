@@ -1,7 +1,6 @@
 // Course 12, `ship` — ship it as a package.
 import type { SceneModel } from '@graphlearning/graphl-flow'
-import { grab, lineOf, session } from '../spine'
-import { consoleFrame } from './console'
+import { file, grab, lineOf, session } from '../spine'
 import { lesson } from './lesson'
 
 const S = (n: string) => `ship/${n}`
@@ -33,10 +32,11 @@ const dts = lesson({
   edges: [{ from: 'ts', to: 'js' }, { from: 'ts', to: 'd' }],
 })
 
-const pack3 = run('03-exports')
-const pack = consoleFrame({
-  model: 'The package map: import path → file',
-  session: pack3, highlight: [lineOf(pack3, 'dist/index.d.ts'), lineOf(pack3, 'dist/index.js'), lineOf(pack3, 'total files')],
+const pack3 = run('03-exports'), pkg3 = file(S('03-exports'), 'package.json')
+const pack = lesson({
+  step: S('03-exports'), path: 'package.json', model: 'The package map: import path → file',
+  focus: ['"exports": {', '"files": ['],
+  show: [[lineOf(pkg3, '"exports": {'), lineOf(pkg3, '"exports": {') + 4], [lineOf(pkg3, '"files": ['), lineOf(pkg3, '"files": [')]],
   side: [
     { type: 'item', id: 'imp', icon: 'code', tone: 'neutral', title: "import … from 'miniflow'", sub: 'what a user writes' },
     { type: 'group', id: 'map', title: '"exports": { ".": … }', tone: 'ingest', dir: 'row', children: [

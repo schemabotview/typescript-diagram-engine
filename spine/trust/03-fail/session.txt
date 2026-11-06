@@ -1,44 +1,14 @@
-ana@laptop:~/miniflow$ npx vitest run
-
- RUN  v5.1.0 /home/ana/miniflow
-
- ❯ test/route.test.ts (3 tests | 1 failed) 8ms
-   ❯ route (3)
-     × spreads three edges over one face, in order 5ms
-
-⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
-
- FAIL  test/route.test.ts > route > spreads three edges over one face, i
-n order
-AssertionError: expected [ 0.3333333333333333, …(2) ] to deeply equal [ 
-0.25, 0.5, 0.75 ]
-
+ana@laptop:~/miniflow$ npx vitest run > test.log 2>&1; echo "exit $?"
+exit 1
+ana@laptop:~/miniflow$ grep -E '^[-+] ' test.log
 - Expected
 + Received
-
-  [
 -   0.25,
 -   0.5,
 -   0.75,
 +   0.3333333333333333,
 +   0.6666666666666666,
 +   1,
-  ]
-
- ❯ test/route.test.ts:24:50
-     22|     ])
-     23|     const edges = ['p', 'i', 'q'].map((from) => ({ from, to: 'o
-rders' …
-     24|     expect(ports(edges, rects).map((p) => p.tb)).toEqual([0.25,
- 0.5, 0…
-       |                                                  ^
-     25|   })
-     26| })
-
-⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
-
-
- Test Files  1 failed | 1 passed (2)
+ana@laptop:~/miniflow$ grep -E 'Tests ' test.log
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
       Tests  1 failed | 4 passed (5)
-   Start at  11:00:48
-   Duration  178ms (transform 58%, import 24%, tests 11%, worker 7%)

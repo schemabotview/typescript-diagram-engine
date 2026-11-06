@@ -5,7 +5,8 @@
     "package.json"
   ],
   "commands": [
-    "npm pack --dry-run --ignore-scripts"
+    "npm pack --dry-run --ignore-scripts 2>&1 | grep ' dist/index'",
+    "npm pack --dry-run --ignore-scripts 2>&1 | tail -n 9"
   ],
   "setup": [
     "npm run build --silent"
@@ -17,8 +18,8 @@
     "package size: +[\\d.]+ kB"
   ],
   "recorded": {
-    "inputs": "605c3d35fc196148",
-    "outputs": "81489321f8a12c9a",
+    "inputs": "7ebfd64cee97ec09",
+    "outputs": "ac5541d599e2ba2c",
     "node": "26.13.0"
   }
 }

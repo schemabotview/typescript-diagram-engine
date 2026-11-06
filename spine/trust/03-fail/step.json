@@ -5,7 +5,9 @@
     "src/route.ts"
   ],
   "commands": [
-    "npx vitest run"
+    "npx vitest run > test.log 2>&1; echo \"exit $?\"",
+    "grep -E '^[-+] ' test.log",
+    "grep -E 'Tests ' test.log"
   ],
   "volatile": [
     "Start at +\\d\\d:\\d\\d:\\d\\d",
@@ -14,12 +16,9 @@
     "in \\d+(\\.\\d+)?m?s",
     "added \\d+ packages"
   ],
-  "exit": {
-    "npx vitest run": 1
-  },
   "recorded": {
-    "inputs": "a2baa62db85b454c",
-    "outputs": "d03507b94f1c917e",
+    "inputs": "269b2ed939797456",
+    "outputs": "855f258b32d69875",
     "node": "26.13.0"
   }
 }

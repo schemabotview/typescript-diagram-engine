@@ -39,11 +39,11 @@ For libraries written in plain JavaScript, people write declaration files by han
       scene: 'ship-pack',
       narration: `The package dot json now describes a library, not just a project. Two fields matter most.
 
-Exports maps import paths to files. A user writes import from miniflow, nothing more, and the side pane follows that path. The dot entry says that for types, tsc should read dist slash index dot d dot ts, and for imports, Node should load dist slash index dot js. Anything not listed in exports cannot be imported at all, which enforces the public surface from the last section at the package level: nobody can reach into dist and import the router directly.
+Both are highlighted in the editor. Exports maps import paths to files. A user writes import from miniflow, nothing more, and the side pane follows that path. The dot entry says that for types, tsc should read dist slash index dot d dot ts, and for imports, Node should load dist slash index dot js. Anything not listed in exports cannot be imported at all, which enforces the public surface from the last section at the package level: nobody can reach into dist and import the router directly.
 
 Files lists what goes into the tarball: only dist. Not the source, not the tests, not the scenes or the web page. A prepack script runs the build first, so a packed tarball can never contain stale JavaScript.
 
-The terminal shows npm pack with dry run, which lists what would be packed without writing anything. The tarball contents are every compiled file: a dot js and a dot d dot ts for each source file, highlighted where the index pair appears, and the package dot json. Then the details: the name and version, one point oh point oh, a package size of about ten kilobytes, and thirty-seven files in total.
+The terminal runs npm pack with dry run, which lists what would be packed without writing anything. The full list is long, a dot js and a dot d dot ts for every source file, so the first command asks grep for just the entry point: index dot d dot ts and index dot js, the two files exports points at, both in the tarball. The second shows the last lines of the report, the details: the version, one point oh point oh, a package size of about ten kilobytes, and thirty-seven files in total.
 
 Reading that list before every release is a good habit. It is the only place that shows exactly what users will receive, and it catches the classics: a forgotten build, a secret file, or a test fixture of several megabytes.
 

@@ -5,7 +5,9 @@
     "src/svg-document.ts"
   ],
   "commands": [
-    "npx vitest run"
+    "npx vitest run > test.log 2>&1; echo \"exit $?\"",
+    "grep -E '^[-+] ' test.log",
+    "grep -E 'Snapshots|Tests ' test.log"
   ],
   "volatile": [
     "Start at +\\d\\d:\\d\\d:\\d\\d",
@@ -14,12 +16,9 @@
     "in \\d+(\\.\\d+)?m?s",
     "added \\d+ packages"
   ],
-  "exit": {
-    "npx vitest run": 1
-  },
   "recorded": {
-    "inputs": "7bcacb0c8178e1a5",
-    "outputs": "5872a2c68e482b16",
+    "inputs": "258ab2002d9582b0",
+    "outputs": "c1dd5965ad124fba",
     "node": "26.13.0"
   }
 }

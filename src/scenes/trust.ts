@@ -1,7 +1,6 @@
 // Course 9, `trust` — strict flags, tests, snapshots, type tests, the linter, one check script.
 import type { SceneModel } from '@graphlearning/graphl-flow'
 import { file, grab, lineOf, session } from '../spine'
-import { consoleFrame } from './console'
 import { lesson } from './lesson'
 
 const S = (n: string) => `trust/${n}`
@@ -31,27 +30,27 @@ const vitest = lesson({
   edges: [{ from: 'arrange', to: 'act' }, { from: 'act', to: 'assert' }],
 })
 
-const fail3 = run('03-fail')
-const failing = consoleFrame({
-  model: 'Expected vs received',
-  session: fail3, highlight: [lineOf(fail3, '-   0.25,'), lineOf(fail3, '+   0.3333333333333333,')],
+const log3 = file(S('03-fail'), 'test.log')
+const failing = lesson({
+  step: S('03-fail'), path: 'src/route.ts', model: 'Expected vs received',
+  focus: ['if (slot) slot[p.end] = (k + 1) / ends.length'],
   side: [
     { type: 'item', id: 'bug', icon: 'bell', tone: 'consume', title: '(k + 1) / ends.length', sub: 'the off-by-one, in ports()' },
     { type: 'table', id: 'diff', title: 'three ports on one face', columns: ['port', 'expected', 'received'], rows: [
       ['1st', '0.25', '0.33'], ['2nd', '0.5', '0.67'], { cells: ['3rd', '0.75', '1: the corner'], tone: 'consume' },
     ] },
-    { type: 'item', id: 'where', icon: 'search', tone: 'serve', title: 'the failing line', sub: grab(fail3, /❯ (test\/route\.test\.ts:\d+:\d+)/) },
+    { type: 'item', id: 'where', icon: 'search', tone: 'serve', title: 'test.log: the whole report', sub: `the failing line: ${grab(log3, /❯ (test\/route\.test\.ts:\d+:\d+)/)}` },
   ],
 })
 
-const snap4 = run('04-snapshot')
-const snapshot = consoleFrame({
-  model: 'The stored picture vs the new one',
-  session: snap4, highlight: [lineOf(snap4, '-   <defs>'), lineOf(snap4, '+   <defs>')],
+const log4 = file(S('04-snapshot'), 'test.log')
+const snapshot = lesson({
+  step: S('04-snapshot'), path: 'src/svg-document.ts', model: 'The stored picture vs the new one',
+  focus: ['markerWidth="10" markerHeight="10"'],
   side: [
     { type: 'item', id: 'stored', icon: 'archive', tone: 'store', title: 'svg.test.ts.snap', sub: 'the checkout SVG, written on the first run' },
     { type: 'item', id: 'change', icon: 'code', tone: 'ingest', title: 'markerWidth 8 → 10', sub: 'one attribute, in svg-document.ts' },
-    { type: 'item', id: 'mismatch', icon: 'bell', tone: 'consume', title: 'Snapshot mismatched', sub: 'the diff shows the one line that moved' },
+    { type: 'item', id: 'mismatch', icon: 'bell', tone: 'consume', title: `Snapshot ${grab(log4, /Snapshot `[^`]+` (mismatched)/)}`, sub: 'the diff: the one line that moved' },
     { type: 'note', id: 'u', text: 'Meant it? vitest -u rewrites the stored snapshot. Did not? The test just caught a regression.' },
   ],
 })

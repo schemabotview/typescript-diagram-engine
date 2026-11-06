@@ -339,7 +339,7 @@ The output is the layout itself: a printed table of rects (`console.table`), unt
 |---|---|---|---|
 | 1 | Stricter flags | `noUncheckedIndexedAccess` finds five unchecked indexes in `route.ts` and `render/svg.ts` | the flag adds `\| undefined` to every index |
 | 2 | Tests with Vitest | `fit` and `route` tested | arrange → act → assert |
-| 3 | A failing test | an off-by-one in the port spread: the real diff (console frame) | expected vs received |
+| 3 | A failing test | an off-by-one in the port spread: the real diff, grepped from `test.log` | expected vs received |
 | 4 | Snapshot tests | the SVG of `checkout` snapshotted; a changed attribute breaks it | the stored picture vs the new one |
 | 5 | Testing the types | `expectTypeOf` on `layout`'s result; `// @ts-expect-error` on a bad tone | a test that must NOT compile |
 | 6 | The linter catches a floating promise | oxlint `--type-aware`: an un-awaited `writeFile` | a promise nobody awaits |
@@ -416,9 +416,10 @@ Output panel for 11.3–11.6 (the live page); terminal for the dev server, the `
     no JavaScript compiler API (its main export is the version), and typescript-eslint 8.72.1 peers on
     TypeScript < 6.1. oxlint's type checker, oxlint-tsgolint, is built on TypeScript 7 itself, so the
     whole film stays on one TypeScript (2026-11-06).
-12. A transcript too long for any IDE terminal (a test failure with its diff, 9.3 and 9.4) is shown
-    in a console frame: the whole transcript at full height beside the side pane, never cut
-    (2026-11-06).
+12. Every step section is an IDE frame, a long result included. A report too long for the terminal
+    (a test failure with its diff, 9.3 and 9.4; the packed file list, 12.3) is saved or piped, and the
+    terminal shows the part the section teaches with a visible filter (`grep`, `tail`): real output,
+    the cut on screen. A console frame was tried for these and withdrawn at review (2026-11-06).
 
 ## Open
 
