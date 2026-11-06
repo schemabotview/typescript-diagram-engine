@@ -5,11 +5,11 @@ Identifiers:     109253
 Symbols:         178382
 Types:            97216
 Instantiations:  126172
-Memory used:    162079K
-Memory allocs:   877106
-Config time:     0.001s
-Parse time:      0.087s
-Bind time:       0.040s
-Check time:      0.406s
+Memory used:    162022K
+Memory allocs:   877160
+Config time:     0.000s
+Parse time:      0.081s
+Bind time:       0.039s
+Check time:      0.438s
 Emit time:       0.000s
-Total time:      0.537s
+Total time:      0.561s

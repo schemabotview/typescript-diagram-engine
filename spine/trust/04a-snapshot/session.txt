@@ -6,5 +6,5 @@ ana@laptop:~/miniflow$ npx vitest run
   Snapshots  1 written
  Test Files  3 passed (3)
       Tests  6 passed (6)
-   Start at  10:18:40
-   Duration  256ms (transform 65%, import 23%, tests 6%, worker 6%)
+   Start at  10:59:10
+   Duration  259ms (transform 65%, import 25%, tests 5%, worker 4%)

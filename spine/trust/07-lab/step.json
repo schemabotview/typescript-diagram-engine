@@ -14,8 +14,8 @@
     "Memory allocs: +\\d+"
   ],
   "recorded": {
-    "inputs": "15983ef2243e5bd7",
-    "outputs": "65af094254d95bec",
+    "inputs": "185520d2eef14197",
+    "outputs": "cef2f24d30aa531c",
     "node": "26.13.0"
   }
 }

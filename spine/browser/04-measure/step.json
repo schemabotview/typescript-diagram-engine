@@ -26,8 +26,8 @@
     "Duration +\\d+m?s.*"
   ],
   "recorded": {
-    "inputs": "1a3058ef26c16122",
-    "outputs": "13ef0effa4dad2e2",
+    "inputs": "a2ff4506fb453300",
+    "outputs": "91170e3d6fbabf48",
     "node": "26.13.0"
   }
 }

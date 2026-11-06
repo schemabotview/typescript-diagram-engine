@@ -1,7 +1,7 @@
 ana@laptop:~/miniflow$ npm install --save-dev oxlint@1.91.0 oxlint-tsgol
 int@7.0.2006
 
-added 4 packages in 691ms
+added 4 packages in 620ms
 ana@laptop:~/miniflow$ npx tsc --noEmit
 ana@laptop:~/miniflow$ npx oxlint --type-aware src test
 src/cli.ts:26:3: error typescript(no-floating-promises): Promises must b

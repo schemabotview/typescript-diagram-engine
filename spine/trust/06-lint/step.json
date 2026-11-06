@@ -25,8 +25,8 @@
     "npx oxlint --type-aware src test": 1
   },
   "recorded": {
-    "inputs": "db09dfe6a98cd72d",
-    "outputs": "0aeb2341c4c7af9d",
+    "inputs": "e59d785eb2d21981",
+    "outputs": "c0c8fdb188c644c4",
     "node": "26.13.0"
   }
 }

@@ -6,5 +6,5 @@ ana@laptop:~/miniflow$ npm test --silent
 
  Test Files  4 passed (4)
       Tests  9 passed (9)
-   Start at  10:38:15
-   Duration  362ms (transform 72%, import 18%, tests 5%, worker 4%)
+   Start at  10:59:59
+   Duration  312ms (transform 66%, import 25%, tests 5%, worker 4%)

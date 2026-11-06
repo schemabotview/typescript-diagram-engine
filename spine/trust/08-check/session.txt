@@ -9,5 +9,5 @@ ana@laptop:~/miniflow$ npm run check
 
  Test Files  4 passed (4)
       Tests  9 passed (9)
-   Start at  10:19:26
-   Duration  333ms (transform 65%, import 22%, tests 7%, worker 6%)
+   Start at  10:59:19
+   Duration  342ms (transform 70%, import 20%, tests 6%, worker 4%)

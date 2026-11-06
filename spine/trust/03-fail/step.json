@@ -18,8 +18,8 @@
     "npx vitest run": 1
   },
   "recorded": {
-    "inputs": "59cd3006af7de947",
-    "outputs": "0a37e1ad6f99ce2f",
+    "inputs": "a2baa62db85b454c",
+    "outputs": "d03507b94f1c917e",
     "node": "26.13.0"
   }
 }

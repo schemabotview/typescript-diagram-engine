@@ -2,9 +2,9 @@ ana@laptop:~/miniflow$ npx vitest run
 
  RUN  v5.1.0 /home/ana/miniflow
 
- ❯ test/route.test.ts (3 tests | 1 failed) 11ms
+ ❯ test/route.test.ts (3 tests | 1 failed) 8ms
    ❯ route (3)
-     × spreads three edges over one face, in order 7ms
+     × spreads three edges over one face, in order 5ms
 
 ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
 
@@ -40,5 +40,5 @@ rders' …
 
  Test Files  1 failed | 1 passed (2)
       Tests  1 failed | 4 passed (5)
-   Start at  10:18:38
-   Duration  217ms (transform 68%, import 16%, tests 11%, worker 6%)
+   Start at  11:00:48
+   Duration  178ms (transform 58%, import 24%, tests 11%, worker 7%)

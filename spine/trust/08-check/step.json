@@ -17,8 +17,8 @@
     "Finished in \\d+(\\.\\d+)?m?s.*"
   ],
   "recorded": {
-    "inputs": "5c528e672898afa6",
-    "outputs": "36e0587fc9399f71",
+    "inputs": "56d4420d86394474",
+    "outputs": "3a3c4faa8c3b87c9",
     "node": "26.13.0"
   }
 }

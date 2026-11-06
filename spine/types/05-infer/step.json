@@ -12,7 +12,7 @@
     "npx tsc --noEmit": 1
   },
   "recorded": {
-    "inputs": "766aee3a90096711",
+    "inputs": "a4ec8a250eeccbef",
     "outputs": "7378604fd8a210e7",
     "node": "26.13.0"
   }

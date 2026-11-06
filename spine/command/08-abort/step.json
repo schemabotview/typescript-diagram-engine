@@ -16,7 +16,7 @@
     "timeout -s INT 3 node src/cli.ts watch scenes": 124
   },
   "recorded": {
-    "inputs": "973180cb51a5caf7",
+    "inputs": "b98771ed06c0e0ea",
     "outputs": "1e1b7bf599217f17",
     "node": "26.13.0"
   }

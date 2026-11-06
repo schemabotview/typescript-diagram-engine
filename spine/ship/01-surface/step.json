@@ -9,7 +9,7 @@
     "node -e \"import('./src/index.ts').then((m) => console.log(Object.keys(m)))\""
   ],
   "recorded": {
-    "inputs": "6a13179a55ace173",
+    "inputs": "e1da275d2c2c96af",
     "outputs": "94c12235c54e93e0",
     "node": "26.13.0"
   }

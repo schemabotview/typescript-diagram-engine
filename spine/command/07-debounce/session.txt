@@ -4,5 +4,4 @@ watching scenes/
 change: self.json
 change: self.json
 change: self.json
-change: self.json
 wrote out/self.svg

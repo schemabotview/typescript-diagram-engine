@@ -17,7 +17,7 @@
     "cd examples/shop && npm ci --silent"
   ],
   "recorded": {
-    "inputs": "1403e54a1e2ce15e",
+    "inputs": "86bc9c493780baa2",
     "outputs": "993d87e7f00a4d6c",
     "node": "26.13.0"
   }

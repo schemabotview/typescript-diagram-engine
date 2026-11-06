@@ -15,8 +15,11 @@
     "timeout 3 node src/cli.ts watch scenes": 124
   },
   "recorded": {
-    "inputs": "42bfb3de851e8a5f",
-    "outputs": "25232a669a88ec1c",
+    "inputs": "89dccd91e96b16e3",
+    "outputs": "1c78de9b2f4c97a8",
     "node": "26.13.0"
-  }
+  },
+  "volatile": [
+    "(change: self\\.json\\n)+"
+  ]
 }
