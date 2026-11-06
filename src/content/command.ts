@@ -97,7 +97,7 @@ One save, one render. But editors do not always save that neatly. Next, many eve
       id: 'debounce',
       title: 'Debounce: closures and timer types',
       scene: 'command-debounce',
-      narration: `This time the background script saves the file three times in quick succession, the way a format-on-save editor or a quick double save can. The terminal shows what the watcher sees: not three events, but four, because one save can be reported more than once. Rendering on each would draw the same scene four times in a fraction of a second.
+      narration: `This time the background script saves the file three times in quick succession, the way a format-on-save editor or a quick double save can. The terminal shows what the watcher sees: more change events than saves, because one save can be reported more than once, and how many depends on the moment. Rendering on each would draw the same scene four times in a fraction of a second.
 
 The fix is a classic: debounce. Wait until the events stop for a moment, then act once.
 
@@ -107,7 +107,7 @@ The timer's type is worth a look. What setTimeout returns differs: in Node it is
 
 Debounce is generic too, over its argument list, so the debounced function takes exactly the arguments the original did, a path here.
 
-The run shows four change events, then one render. Next, stopping the watcher cleanly.`,
+The run shows the burst of change events, then exactly one render. Next, stopping the watcher cleanly.`,
     },
     {
       id: 'abort',

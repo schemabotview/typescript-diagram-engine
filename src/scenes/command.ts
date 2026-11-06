@@ -92,7 +92,7 @@ const debounce = lesson({
   step: S('07-debounce'), path: 'src/watch.ts', model: 'A closure holding the pending timer',
   focus: ['let timer: ReturnType<typeof setTimeout> | undefined', 'clearTimeout(timer)', 'timer = setTimeout(() => f(...args), ms)'],
   side: [
-    { type: 'item', id: 'evs', icon: 'activity', tone: 'neutral', title: `${changes7} change events`, sub: 'three saves, close together' },
+    { type: 'item', id: 'evs', icon: 'activity', tone: 'neutral', title: `${changes7} change events`, sub: 'three saves, close together: the count varies run to run' },
     { type: 'item', id: 'closure', icon: 'timer', tone: 'ingest', title: 'later(path)', sub: 'each call clears the timer, then sets it again' },
     { type: 'item', id: 'one', icon: 'check', tone: 'store', title: '1 render', sub: '200 ms after the last event' },
     { type: 'note', id: 'type', text: 'ReturnType<typeof setTimeout>: a Timeout object in Node, a number in a browser.' },

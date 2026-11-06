@@ -13,6 +13,7 @@ command in bash, in a real ~/miniflow, with the pinned Node first on PATH. A fai
 steps with the same `from`.
 
     python3 scripts/spine.py record [<course>[/<step>]]   run the steps, write project/ + session.txt + shots/
+    python3 scripts/spine.py record --stale               only the steps that are no longer current
     python3 scripts/spine.py check                        recorded, current, untouched (no run, no network)
     python3 scripts/spine.py replay [<course>[/<step>]]   run again and compare (volatile spans masked)
 
@@ -343,8 +344,9 @@ def main() -> None:
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'check'
     arg = sys.argv[2] if len(sys.argv) > 2 else None
     if cmd == 'record':
-        chosen = select(arg)
-        for d in order(chosen):
+        # `record --stale`: every step whose inputs or outputs no longer match its fingerprint.
+        chosen = [] if arg == '--stale' else select(arg)
+        for d in order(chosen or steps()):
             rec = load(d).get('recorded')
             current = rec and rec['inputs'] == inputs_of(d) and rec['outputs'] == outputs_of(d)
             if d in chosen or not current:
