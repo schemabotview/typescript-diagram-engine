@@ -7,21 +7,6 @@ export const start: Course = {
   title: 'The first file',
   sections: [
     {
-      id: 'recap',
-      title: 'So far: what TypeScript is, and the plan',
-      scene: 'start-recap',
-      focus: 'start',
-      narration: `Before we write a line, here is where we stand. Across the top is the whole film, one course at a time, and we are at the first lit box, the first file. Everything after it is still greyed out, because none of it exists yet.
-
-So far we have one idea, from the introduction. TypeScript is JavaScript with types written into it. A checker called tsc reads those types and tells us what is wrong. Then the types are erased, and what is left is plain JavaScript, which V8 runs.
-
-On the right is the app as it stands today. It is an empty folder called miniflow. There is no file in it, no package, and no box.
-
-This course answers one question. How does a TypeScript file actually run, and who checks it? We will make the folder a package with Node and npm. We will write main dot ts, which draws the first box. And we will add tsc, which checks what Node only runs.
-
-Let's start with the two tools everything else stands on.`,
-    },
-    {
       id: 'node',
       title: 'Node and npm: a folder becomes a package',
       scene: 'start-node',

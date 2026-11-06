@@ -10,10 +10,10 @@ Published at `graphl.in/typescript-diagram-engine`. Pins: graphl-flow 0.11.0, sh
 
 | course | spine | scenes + narration | checked + looked at | audio | recorded |
 |---|---|---|---|---|---|
-| 2 `start` (pilot, 8 sections) | ✓ 8 steps | ✓ | ✓ 2026-11-06 | — | — |
+| 2 `start` (pilot, 7 sections) | ✓ 8 steps | ✓ | ✓ 2026-11-06 | — | — |
 | 1, 3–12 | — | — | — | — | — |
 
-Pilot Course 2 is awaiting owner review (workspace checklist, step 4).
+Pilot Course 2 approved 2026-11-06 (openers withdrawn, Decision 9).
 
 ## Repo-only commands
 
@@ -50,8 +50,6 @@ node_modules/.bin/vite` after, or the next run's shots come from the stale serve
 - `src/scenes/ide.ts` is frame v2 ported from graphl-flow's `dev/fixtures/studies/ide-frame.ts`
   (the reference repo was not reachable when this was built). It THROWS when a transcript has more
   rows than the variant's terminal shows: `code` 8, `run` 17 (with the explorer).
-- `src/scenes/opener.ts` is the opener frame (Decision 9): every course from 2 starts with a
-  `recap` section, focus on its own course id. check-content fails a course without one.
 - `src/spine.ts` is the only way a scene reads the spine: `file`, `session`, `shot`, `tree`,
   `lineOf`/`linesOf`, and `grab` for a value quoted in a side pane (never typed).
 

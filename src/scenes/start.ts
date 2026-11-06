@@ -2,18 +2,8 @@
 import type { SceneModel } from '@graphlearning/graphl-flow'
 import { file, grab, lineOf, linesOf, session, shot, tree } from '../spine'
 import { ide } from './ide'
-import { opener } from './opener'
 
 const S = (n: string) => `start/${n}`
-
-// ── 0 · recap ────────────────────────────────────────────────────────────────────────────────
-const recap = opener({
-  course: 'start',
-  before: [{ course: '1 intro', ts: 'JavaScript plus types: tsc checks them, Node erases them, V8 runs what is left', can: 'nothing yet: it is a plan' }],
-  now: { type: 'item', id: 'empty', icon: 'folder', title: '~/miniflow', sub: 'an empty folder: no file, no package, no box' },
-  question: 'How does a .ts file run, and who checks it?',
-  adds: ['Node and npm make the folder a package', 'main.ts draws the first box', 'tsc checks what Node only runs'],
-})
 
 // ── 1 · Node, npm and a folder ───────────────────────────────────────────────────────────────
 const pkg = file(S('01-init'), 'package.json')
@@ -169,7 +159,6 @@ const flag: SceneModel = ide({
 })
 
 export const START: Record<string, SceneModel> = {
-  'start-recap': recap,
   'start-node': node,
   'start-main': main,
   'start-emit': emit,
