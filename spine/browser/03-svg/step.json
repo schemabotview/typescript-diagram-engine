@@ -1,0 +1,32 @@
+{
+  "title": "the SVG in the page",
+  "from": "browser/02-dom",
+  "changes": [
+    "src/load.ts",
+    "src/validate.ts",
+    "web/main.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "npm test --silent"
+  ],
+  "page": {
+    "name": "localhost:5173",
+    "serve": "npx vite web --port 5173 --strictPort",
+    "url": "http://localhost:5173/"
+  },
+  "panel": "output",
+  "volatile": [
+    "ready in \\d+ ms",
+    "built in \\d+m?s",
+    "in \\d+(\\.\\d+)?m?s",
+    "added \\d+ packages",
+    "Start at +\\d\\d:\\d\\d:\\d\\d",
+    "Duration +\\d+m?s.*"
+  ],
+  "recorded": {
+    "inputs": "517db71b7e4605d5",
+    "outputs": "d9b172bdb631cd52",
+    "node": "26.13.0"
+  }
+}

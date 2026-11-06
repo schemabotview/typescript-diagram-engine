@@ -1,0 +1,22 @@
+{
+  "title": "events: a theme toggle",
+  "from": "browser/04-measure",
+  "changes": [
+    "web/index.html",
+    "web/main.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit"
+  ],
+  "page": {
+    "name": "localhost:5173",
+    "serve": "npx vite web --port 5173 --strictPort",
+    "url": "http://localhost:5173/"
+  },
+  "panel": "output",
+  "recorded": {
+    "inputs": "b2327871459e664c",
+    "outputs": "8aa3345d88ea36a8",
+    "node": "26.13.0"
+  }
+}

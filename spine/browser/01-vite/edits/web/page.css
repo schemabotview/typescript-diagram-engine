@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: #1a1d23;
+  color: #e6e8ec;
+  font: 16px sans-serif;
+}
+body[data-theme='light'] {
+  background: #f7f8fa;
+  color: #1a1d23;
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+}
+h1 {
+  margin: 0;
+  font-size: 18px;
+}
+button {
+  font: inherit;
+  padding: 2px 12px;
+}
+main {
+  overflow: hidden;
+  padding: 16px;
+}

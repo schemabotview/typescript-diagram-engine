@@ -77,7 +77,7 @@ def files(root: Path) -> dict[str, bytes]:
         return out
     for p in sorted(root.rglob('*')):
         rel = p.relative_to(root)
-        if rel.parts[0] in SKIP or rel.suffix == '.tgz' or not p.is_file():
+        if SKIP & set(rel.parts) or rel.suffix == '.tgz' or not p.is_file():
             continue
         out[rel.as_posix()] = p.read_bytes()
     return out
@@ -197,24 +197,56 @@ def mask(text: str, patterns: list[str]) -> str:
     return text
 
 
+def shot_name(rel: str) -> str:
+    """A capture's file name in shots/: no '/' and no ':' (a dev server will not serve one)."""
+    return rel.replace('/', '-').replace(':', '-')
+
+
 def shoot(d: Path, meta: dict) -> None:
     shots = d / 'shots'
     shutil.rmtree(shots, ignore_errors=True)
     caps = meta.get('capture', [])
-    if not caps:
+    page = meta.get('page')
+    if not caps and not page:
         return
     shots.mkdir()
     w, h = FACTS['figure']['w'], FACTS['figure']['h']
+    if page:
+        shoot_page(d, page, shots / shot_name(page['name']), w, h)
     for rel in caps:
         src = d / 'project' / rel
         if not src.exists():
             die(f'{step_id(d)}: capture {rel} was not written')
-        base = rel.replace('/', '-')
+        base = shot_name(rel)
         r = subprocess.run(['node', str(REPO / 'scripts' / 'shoot-svg.cjs'), str(src), str(shots / base), str(w), str(h),
                             str(FACTS['figure']['minTextPx'])], capture_output=True, text=True)
         if r.returncode:
             die(f'{step_id(d)}: shooting {rel} failed\n{r.stdout}{r.stderr}')
         print('   ', r.stdout.strip())
+
+
+def shoot_page(d: Path, page: dict, base: Path, w: int, h: int) -> None:
+    """Start the step's dev server in the work dir (hidden: never in the transcript), shoot its page."""
+    server = subprocess.Popen(['bash', '-c', page['serve']], cwd=WORK, env=env(), stdout=subprocess.PIPE,
+                              stderr=subprocess.STDOUT, start_new_session=True)
+    try:
+        import time, urllib.request
+        for _ in range(100):
+            try:
+                urllib.request.urlopen(page['url'], timeout=1)
+                break
+            except Exception:
+                time.sleep(0.2)
+        else:
+            die(f'{step_id(d)}: {page["url"]} never answered')
+        r = subprocess.run(['node', str(REPO / 'scripts' / 'shoot-url.cjs'), page['url'], str(base), str(w), str(h),
+                            str(FACTS['figure']['minTextPx'])], capture_output=True, text=True)
+        if r.returncode:
+            die(f'{step_id(d)}: shooting {page["url"]} failed\n{r.stdout}{r.stderr}')
+        print('   ', r.stdout.strip())
+    finally:
+        os.killpg(server.pid, 15)
+        server.wait()
 
 
 def record(d: Path) -> None:
@@ -276,9 +308,9 @@ def check() -> int:
                 problems.append('touched: project/, session.txt or shots/ differ from what was recorded')
         if sorted(files(d / 'edits')) != sorted(meta.get('changes', [])):
             problems.append('edits/ does not match `changes`')
-        for rel in meta.get('capture', []):
+        for rel in meta.get('capture', []) + ([meta['page']['name']] if meta.get('page') else []):
             for theme in ('dark', 'light'):
-                if not (d / 'shots' / f"{rel.replace('/', '-')}.{theme}.png").exists():
+                if not (d / 'shots' / f"{shot_name(rel)}.{theme}.png").exists():
                     problems.append(f'no {theme} shot of {rel}')
         print('FAIL' if problems else 'ok  ', step_id(d), '; '.join(problems))
         bad += bool(problems)

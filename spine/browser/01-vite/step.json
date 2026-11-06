@@ -1,0 +1,29 @@
+{
+  "title": "Vite and index.html",
+  "from": "types/09-fixed",
+  "changes": [
+    "tsconfig.json",
+    "web/index.html",
+    "web/main.ts",
+    "web/page.css"
+  ],
+  "commands": [
+    "npm install --save-dev vite@8.3.5",
+    "npx tsc --noEmit",
+    "timeout 3 npx vite web --port 5173 --strictPort"
+  ],
+  "exit": {
+    "timeout 3 npx vite web --port 5173 --strictPort": 124
+  },
+  "volatile": [
+    "ready in \\d+ ms",
+    "built in \\d+m?s",
+    "in \\d+(\\.\\d+)?m?s",
+    "added \\d+ packages"
+  ],
+  "recorded": {
+    "inputs": "a215b0a349d896d9",
+    "outputs": "3cdcf17c56818e5f",
+    "node": "26.13.0"
+  }
+}

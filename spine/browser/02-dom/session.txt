@@ -1,0 +1,5 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+web/main.ts(2,1): error TS18047: 'host' is possibly 'null'.
+web/main.ts(4,14): error TS2322: Type 'HTMLElement | null' is not assign
+able to type '"probe"'.
+  Type 'null' is not assignable to type '"probe"'.

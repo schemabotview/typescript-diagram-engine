@@ -1,0 +1,10 @@
+ana@laptop:~/miniflow$ npm install --save-dev vite@8.3.5
+
+changed 1 package in 697ms
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ timeout 3 npx vite web --port 5173 --strictPort
+
+  VITE v8.3.5  ready in 187 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose

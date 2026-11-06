@@ -1,0 +1,33 @@
+{
+  "title": "measuring real text",
+  "from": "browser/03-svg",
+  "changes": [
+    "src/layout.ts",
+    "src/render/svg.ts",
+    "src/svg-document.ts",
+    "web/main.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "npm test --silent"
+  ],
+  "page": {
+    "name": "localhost:5173",
+    "serve": "npx vite web --port 5173 --strictPort",
+    "url": "http://localhost:5173/"
+  },
+  "panel": "output",
+  "volatile": [
+    "ready in \\d+ ms",
+    "built in \\d+m?s",
+    "in \\d+(\\.\\d+)?m?s",
+    "added \\d+ packages",
+    "Start at +\\d\\d:\\d\\d:\\d\\d",
+    "Duration +\\d+m?s.*"
+  ],
+  "recorded": {
+    "inputs": "1a3058ef26c16122",
+    "outputs": "13ef0effa4dad2e2",
+    "node": "26.13.0"
+  }
+}

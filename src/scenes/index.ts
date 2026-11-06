@@ -8,8 +8,9 @@ import { LOAD } from './load'
 import { COMMAND } from './command'
 import { TRUST } from './trust'
 import { TYPES } from './types'
+import { BROWSER } from './browser'
 
-const SCENES: Record<string, SceneModel> = { ...START, ...MODEL, ...LAYOUT, ...DRAW, ...ROUTE, ...LOAD, ...COMMAND, ...TRUST, ...TYPES }
+const SCENES: Record<string, SceneModel> = { ...START, ...MODEL, ...LAYOUT, ...DRAW, ...ROUTE, ...LOAD, ...COMMAND, ...TRUST, ...TYPES, ...BROWSER }
 
 export const getScene = (id: string): SceneModel | undefined => SCENES[id]
 export const sceneIds = () => Object.keys(SCENES)

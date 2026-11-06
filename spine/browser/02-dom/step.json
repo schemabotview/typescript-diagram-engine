@@ -1,0 +1,18 @@
+{
+  "title": "DOM types, and Element | null",
+  "from": "browser/01-vite",
+  "changes": [
+    "web/main.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "e52f16458423830a",
+    "outputs": "06e811ed77db923a",
+    "node": "26.13.0"
+  }
+}

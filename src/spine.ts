@@ -25,7 +25,7 @@ export function session(step: string): string {
 
 /** The two screenshots of a picture the step wrote (`out/box.svg`), one per theme. */
 export function shot(step: string, path: string): { dark: string; light: string } {
-  const base = key(step, `shots/${path.replace(/\//g, '-')}`)
+  const base = key(step, `shots/${path.replace(/[/:]/g, '-')}`)
   const dark = pngs[`${base}.dark.png`], light = pngs[`${base}.light.png`]
   if (!dark || !light) throw new Error(`spine: ${step} has no shot of ${path}`)
   return { dark, light }

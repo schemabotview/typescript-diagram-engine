@@ -1,0 +1,10 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ npm test --silent
+
+ RUN  v5.1.0 /home/ana/miniflow
+
+
+ Test Files  4 passed (4)
+      Tests  9 passed (9)
+   Start at  10:38:10
+   Duration  332ms (transform 77%, import 14%, tests 5%, worker 4%)

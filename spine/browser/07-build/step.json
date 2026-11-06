@@ -1,0 +1,18 @@
+{
+  "title": "a production build",
+  "from": "browser/06-fit",
+  "commands": [
+    "npx vite build web"
+  ],
+  "volatile": [
+    "ready in \\d+ ms",
+    "built in \\d+m?s",
+    "in \\d+(\\.\\d+)?m?s",
+    "added \\d+ packages"
+  ],
+  "recorded": {
+    "inputs": "c414ac0fac7df606",
+    "outputs": "9f393da5960c1019",
+    "node": "26.13.0"
+  }
+}

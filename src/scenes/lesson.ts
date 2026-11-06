@@ -9,7 +9,7 @@ import type { Edge, SceneModel, SceneNode } from '@graphlearning/graphl-flow'
 import { file, lineOf, session, shot, tree } from '../spine'
 import { ide, terminalRows, type Variant } from './ide'
 
-interface StepJson { from?: string; changes?: string[]; capture?: string[]; panel?: 'terminal' | 'output'; delete?: string[] }
+interface StepJson { from?: string; changes?: string[]; capture?: string[]; page?: { name: string }; panel?: 'terminal' | 'output'; delete?: string[] }
 const steps = import.meta.glob<StepJson>('../../spine/*/*/step.json', { import: 'default', eager: true })
 const projects = import.meta.glob('../../spine/*/*/project/**', { query: '?url', import: 'default', eager: true })
 
@@ -69,17 +69,17 @@ export function lesson({ step, path, model, focus = [], show, variant, side, edg
   const after = filesOf(step)
   const added = after.filter((f) => !before.has(f))
   const modified = changes.filter((f) => before.has(f))
-  const output = m.panel === 'output' && m.capture?.length
+  const output = m.panel === 'output' && (m.capture?.length || m.page)
   const transcript = output ? undefined : session(step)
   const v: Variant = variant ?? (output || (transcript && transcript.split('\n').length > terminalRows('code', true)) ? 'run' : 'code')
   const highlight = focus.map((n) => (typeof n === 'number' ? n : lineOf(code, n)))
   const shown = show ?? (highlight.length ? windowFor(code, Math.min(...highlight), Math.max(...highlight), EDITOR_ROWS[v]) : windowFor(code, 1, 1, EDITOR_ROWS[v]))
-  const pic = output ? m.capture![0] : undefined
+  const pic = output ? (m.page?.name ?? m.capture![0]) : undefined
   return ide({
     model, variant: v,
     explorer: tree(step, { active: editPath, added, modified }),
     editor: { filename: editPath, lang: langOf(editPath), code, highlight, ...(shown && { show: shown }) },
-    ...(pic ? { output: { src: shot(step, pic), title: pic, alt: `what miniflow drew: ${pic}` } } : { session: transcript }),
+    ...(pic ? { output: { src: shot(step, pic), title: pic, alt: `what miniflow drew: ${pic}`, chrome: m.page ? 'browser' as const : 'tab' as const } } : { session: transcript }),
     side, edges,
   })
 }

@@ -1,0 +1,22 @@
+{
+  "title": "fit to the window",
+  "from": "browser/05-events",
+  "changes": [
+    "web/main.ts",
+    "web/page.css"
+  ],
+  "commands": [
+    "npx tsc --noEmit"
+  ],
+  "page": {
+    "name": "localhost:5173",
+    "serve": "npx vite web --port 5173 --strictPort",
+    "url": "http://localhost:5173/"
+  },
+  "panel": "output",
+  "recorded": {
+    "inputs": "867165c8ad949242",
+    "outputs": "47e4632c21f0c1cb",
+    "node": "26.13.0"
+  }
+}

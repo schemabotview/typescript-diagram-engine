@@ -370,7 +370,7 @@ Output panel for 11.3–11.6 (the live page); terminal for the dev server, the `
 | 1 | Vite and `index.html` | one page and `vite` as a dev server (no template) | page → module graph → served |
 | 2 | DOM types, and `Element \| null` | `querySelector` can return `null`; narrowing it | the DOM as a typed tree |
 | 3 | The SVG in the page | the same renderer, now in a page (output panel: `localhost:5173`) | renderer → SVG string → `innerHTML` → the DOM |
-| 4 | Measuring real text | a `Measurer` from `getBBox`: proportional fonts change the layout | one interface, two measurers (dependency injection) |
+| 4 | Measuring real text | a `Measurer` from a canvas's `measureText`: a proportional font changes the layout | one interface, two measurers (dependency injection) |
 | 5 | Events: a theme toggle | `addEventListener('click', …)` with `MouseEvent`; dark/light | event → handler → re-render |
 | 6 | Fit to the window | `ResizeObserver` + the pure `fit` from 4 | pane size → `fit` → transform |
 | 7 | A production build | `vite build`: real chunk sizes | dev (unbundled) vs build (bundled, hashed) |
