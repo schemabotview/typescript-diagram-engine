@@ -1,0 +1,31 @@
+{
+  "title": "tests with Vitest",
+  "from": "trust/01-strict",
+  "changes": [
+    "package.json",
+    "src/cli.ts",
+    "src/render/svg.ts",
+    "src/route.ts",
+    "test/fit.test.ts",
+    "test/route.test.ts",
+    "tsconfig.build.json",
+    "tsconfig.json"
+  ],
+  "commands": [
+    "npm install --save-dev vitest@5.1.0",
+    "npx tsc --noEmit",
+    "npx vitest run"
+  ],
+  "volatile": [
+    "Start at +\\d\\d:\\d\\d:\\d\\d",
+    "Duration +\\d+m?s.*",
+    "\\(?\\d+(\\.\\d+)?m?s\\)?",
+    "in \\d+(\\.\\d+)?m?s",
+    "added \\d+ packages"
+  ],
+  "recorded": {
+    "inputs": "f893b396b1588b2d",
+    "outputs": "0d6e32c914f5fc98",
+    "node": "26.13.0"
+  }
+}

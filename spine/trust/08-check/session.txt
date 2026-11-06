@@ -1,0 +1,13 @@
+ana@laptop:~/miniflow$ npm run check
+
+> miniflow@1.0.0 check
+> tsc --noEmit && oxlint --type-aware src test && vitest run
+
+
+ RUN  v5.1.0 /home/ana/miniflow
+
+
+ Test Files  4 passed (4)
+      Tests  9 passed (9)
+   Start at  10:19:26
+   Duration  333ms (transform 65%, import 22%, tests 7%, worker 6%)

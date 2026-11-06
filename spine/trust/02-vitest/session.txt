@@ -1,0 +1,13 @@
+ana@laptop:~/miniflow$ npm install --save-dev vitest@5.1.0
+
+added 35 packages in 2s
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ npx vitest run
+
+ RUN  v5.1.0 /home/ana/miniflow
+
+
+ Test Files  2 passed (2)
+      Tests  5 passed (5)
+   Start at  10:18:36
+   Duration  213ms (transform 78%, import 13%, worker 5%, tests 4%)

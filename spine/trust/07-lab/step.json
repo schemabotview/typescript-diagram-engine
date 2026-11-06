@@ -1,0 +1,21 @@
+{
+  "title": "lab: how tsc checks miniflow",
+  "from": "trust/05-types",
+  "delete": [
+    "test/try.test-d.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit --extendedDiagnostics"
+  ],
+  "lab": true,
+  "volatile": [
+    "\\d+\\.\\d+s",
+    "Memory used: +\\d+K",
+    "Memory allocs: +\\d+"
+  ],
+  "recorded": {
+    "inputs": "15983ef2243e5bd7",
+    "outputs": "65af094254d95bec",
+    "node": "26.13.0"
+  }
+}

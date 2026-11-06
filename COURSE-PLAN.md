@@ -63,7 +63,7 @@ install script pins exact patch versions.
 | TypeScript | 7.0.2 | 2 | `tsc` (the native compiler). `--noEmit` checks; Course 8 emits `dist/` for the `bin`; Course 12 emits `.d.ts` files |
 | @types/node | 26.6.6 | 2 | `node:fs` (2.2 writes the first SVG), `node:fs/promises`, `node:util` `parseArgs` |
 | Vitest | 5.1.0 | 9 | tests, snapshots, `expectTypeOf` |
-| typescript-eslint | 8.72.1 | 9 | `strictTypeChecked`: catches the floating promise |
+| oxlint + oxlint-tsgolint | 1.91.0 + 7.0.2006 | 9 | `--type-aware` `no-floating-promises`: catches the floating promise (typescript-eslint 8.72 needs TypeScript < 6.1; Decision 11) |
 | Vite | 8.3.5 | 11 | dev server and browser build |
 | Playwright | 1.64.1 | infra | spine-only: screenshots every picture for the output panel (2.2 on), and Course 11's live page |
 
@@ -337,14 +337,14 @@ The output is the layout itself: a printed table of rects (`console.table`), unt
 
 | # | Section | Step | Side pane |
 |---|---|---|---|
-| 1 | Stricter flags | `noUncheckedIndexedAccess` finds a real bug in `layout.ts` | the flag adds `\| undefined` to every index |
+| 1 | Stricter flags | `noUncheckedIndexedAccess` finds five unchecked indexes in `route.ts` and `render/svg.ts` | the flag adds `\| undefined` to every index |
 | 2 | Tests with Vitest | `fit` and `route` tested | arrange → act → assert |
-| 3 | A failing test | an off-by-one in the port spread: the real diff | expected vs received |
+| 3 | A failing test | an off-by-one in the port spread: the real diff (console frame) | expected vs received |
 | 4 | Snapshot tests | the SVG of `checkout` snapshotted; a changed attribute breaks it | the stored picture vs the new one |
 | 5 | Testing the types | `expectTypeOf` on `layout`'s result; `// @ts-expect-error` on a bad tone | a test that must NOT compile |
-| 6 | The linter catches a floating promise | `strictTypeChecked`: an un-awaited `writeFile` | a promise nobody awaits |
+| 6 | The linter catches a floating promise | oxlint `--type-aware`: an un-awaited `writeFile` | a promise nobody awaits |
 | 7 | ◆ full scene: how `tsc` checks a program | concept + lab (`--extendedDiagnostics` on miniflow itself) | scanner → parser → binder → checker → emit; files, types, time |
-| 8 | One `check` script | `tsc && eslint && vitest run` in `npm run check` | the gate, three stages |
+| 8 | One `check` script | `tsc && oxlint && vitest run` in `npm run check` | the gate, three stages |
 
 **10. `types` · Types that compute · 8**
 
@@ -412,6 +412,13 @@ Output panel for 11.3–11.6 (the live page); terminal for the dev server, the `
     transcript of both, Node's error and `tsc`'s, is 20 rows and the terminal shows 17. 2.6 runs
     `node --stack-trace-limit=0`, which drops only Node's internal stack frames, so the error itself
     fits whole (2026-11-06).
+11. The linter is oxlint in type-aware mode, not typescript-eslint. TypeScript 7's npm package has
+    no JavaScript compiler API (its main export is the version), and typescript-eslint 8.72.1 peers on
+    TypeScript < 6.1. oxlint's type checker, oxlint-tsgolint, is built on TypeScript 7 itself, so the
+    whole film stays on one TypeScript (2026-11-06).
+12. A transcript too long for any IDE terminal (a test failure with its diff, 9.3 and 9.4) is shown
+    in a console frame: the whole transcript at full height beside the side pane, never cut
+    (2026-11-06).
 
 ## Open
 

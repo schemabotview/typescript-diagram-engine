@@ -1,0 +1,10 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+src/render/svg.ts(76,15): error TS2339: Property 'ta' does not exist on 
+type '{ ta: number; tb: number; } | undefined'.
+src/render/svg.ts(76,19): error TS2339: Property 'tb' does not exist on 
+type '{ ta: number; tb: number; } | undefined'.
+src/route.ts(9,11): error TS2488: Type 'Pt | undefined' must have a '[Sy
+mbol.iterator]()' method that returns an iterator.
+src/route.ts(10,11): error TS2488: Type 'Pt | undefined' must have a '[S
+ymbol.iterator]()' method that returns an iterator.
+src/route.ts(84,30): error TS2532: Object is possibly 'undefined'.

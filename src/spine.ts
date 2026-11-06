@@ -65,7 +65,13 @@ export function tree(step: string, opts: { active?: string; added?: string[]; mo
     const names = [...d.keys()].sort((a, b) => Number(!d.get(a)) - Number(!d.get(b)) || a.localeCompare(b))
     return names.map((name) => {
       const path = at + name, sub = d.get(name)
-      if (sub) return { name, children: build(sub, path + '/') }
+      if (sub) {
+        // A folder holding nothing this step touches is drawn closed, as an editor would leave it:
+        // the explorer must never grow past the frame's height.
+        const inside = (f?: string) => !!f && f.startsWith(path + '/')
+        const open = inside(opts.active) || [...(opts.added ?? []), ...(opts.modified ?? [])].some(inside)
+        return open ? { name, children: build(sub, path + '/') } : { name, folder: true }
+      }
       const state = path === opts.active ? 'active' : opts.added?.includes(path) ? 'new' : undefined
       const note = opts.added?.includes(path) ? 'U' : opts.modified?.includes(path) ? 'M' : undefined
       return { name, ...(state && { state }), ...(note && { note }) } as TreeEntry

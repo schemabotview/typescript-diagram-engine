@@ -1,0 +1,25 @@
+{
+  "title": "a failing test",
+  "from": "trust/02-vitest",
+  "changes": [
+    "src/route.ts"
+  ],
+  "commands": [
+    "npx vitest run"
+  ],
+  "volatile": [
+    "Start at +\\d\\d:\\d\\d:\\d\\d",
+    "Duration +\\d+m?s.*",
+    "\\(?\\d+(\\.\\d+)?m?s\\)?",
+    "in \\d+(\\.\\d+)?m?s",
+    "added \\d+ packages"
+  ],
+  "exit": {
+    "npx vitest run": 1
+  },
+  "recorded": {
+    "inputs": "59cd3006af7de947",
+    "outputs": "0a37e1ad6f99ce2f",
+    "node": "26.13.0"
+  }
+}

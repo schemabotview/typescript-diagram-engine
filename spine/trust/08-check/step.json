@@ -1,0 +1,24 @@
+{
+  "title": "one check script",
+  "from": "trust/06-lint",
+  "changes": [
+    "package.json",
+    "src/cli.ts"
+  ],
+  "commands": [
+    "npm run check"
+  ],
+  "volatile": [
+    "Start at +\\d\\d:\\d\\d:\\d\\d",
+    "Duration +\\d+m?s.*",
+    "\\(?\\d+(\\.\\d+)?m?s\\)?",
+    "in \\d+(\\.\\d+)?m?s",
+    "added \\d+ packages",
+    "Finished in \\d+(\\.\\d+)?m?s.*"
+  ],
+  "recorded": {
+    "inputs": "5c528e672898afa6",
+    "outputs": "36e0587fc9399f71",
+    "node": "26.13.0"
+  }
+}

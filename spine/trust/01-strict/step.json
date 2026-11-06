@@ -1,0 +1,18 @@
+{
+  "title": "stricter flags",
+  "from": "command/08-abort",
+  "changes": [
+    "tsconfig.json"
+  ],
+  "commands": [
+    "npx tsc --noEmit"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "b8219ef0ef8dcb28",
+    "outputs": "68a70ea5407c5e8c",
+    "node": "26.13.0"
+  }
+}

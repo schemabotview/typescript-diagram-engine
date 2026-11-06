@@ -1,0 +1,32 @@
+{
+  "title": "the linter catches a floating promise",
+  "from": "trust/05-types",
+  "changes": [
+    ".oxlintrc.json",
+    "src/cli.ts"
+  ],
+  "delete": [
+    "test/try.test-d.ts"
+  ],
+  "commands": [
+    "npm install --save-dev oxlint@1.91.0 oxlint-tsgolint@7.0.2006",
+    "npx tsc --noEmit",
+    "npx oxlint --type-aware src test"
+  ],
+  "volatile": [
+    "Start at +\\d\\d:\\d\\d:\\d\\d",
+    "Duration +\\d+m?s.*",
+    "\\(?\\d+(\\.\\d+)?m?s\\)?",
+    "in \\d+(\\.\\d+)?m?s",
+    "added \\d+ packages",
+    "Finished in \\d+(\\.\\d+)?m?s.*"
+  ],
+  "exit": {
+    "npx oxlint --type-aware src test": 1
+  },
+  "recorded": {
+    "inputs": "db09dfe6a98cd72d",
+    "outputs": "0aeb2341c4c7af9d",
+    "node": "26.13.0"
+  }
+}

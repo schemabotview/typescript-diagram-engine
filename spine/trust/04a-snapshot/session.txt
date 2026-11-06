@@ -1,0 +1,10 @@
+ana@laptop:~/miniflow$ npx vitest run
+
+ RUN  v5.1.0 /home/ana/miniflow
+
+
+  Snapshots  1 written
+ Test Files  3 passed (3)
+      Tests  6 passed (6)
+   Start at  10:18:40
+   Duration  256ms (transform 65%, import 23%, tests 6%, worker 6%)

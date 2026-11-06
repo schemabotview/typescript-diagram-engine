@@ -1,0 +1,27 @@
+{
+  "title": "testing the types",
+  "from": "trust/04a-snapshot",
+  "changes": [
+    "test/try.test-d.ts",
+    "test/types.test.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "npx vitest run"
+  ],
+  "volatile": [
+    "Start at +\\d\\d:\\d\\d:\\d\\d",
+    "Duration +\\d+m?s.*",
+    "\\(?\\d+(\\.\\d+)?m?s\\)?",
+    "in \\d+(\\.\\d+)?m?s",
+    "added \\d+ packages"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "83014a034e8fc1bd",
+    "outputs": "299356c92ef832a7",
+    "node": "26.13.0"
+  }
+}
