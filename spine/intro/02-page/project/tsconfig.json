@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "nodenext",
+    "types": [
+      "node"
+    ],
+    "strict": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "rewriteRelativeImportExtensions": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmit": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src",
+    "test",
+    "scenes",
+    "web"
+  ]
+}

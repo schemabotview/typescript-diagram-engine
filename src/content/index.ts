@@ -1,4 +1,5 @@
 import type { Course } from '@graphlearning/shell'
+import { intro } from './intro'
 import { start } from './start'
 import { model } from './model'
 import { layout } from './layout'
@@ -13,4 +14,4 @@ import { ship } from './ship'
 
 // Courses in film order. Course 1 (`intro`) shows the FINISHED app, so it is authored last and
 // inserted first.
-export const COURSES: Record<string, Course> = { start, model, layout, draw, route, load, command, trust, types, browser, ship }
+export const COURSES: Record<string, Course> = { intro, start, model, layout, draw, route, load, command, trust, types, browser, ship }

@@ -158,7 +158,7 @@ for (const slug of slugs) {
   if (before !== await p.$eval('.gf-content', c => c.style.transform)) res.problems.push('fit moved after ready')
   const ide = await p.$('[data-id="editor"]')
   if (ide) ideFits.set(slug, before)
-  const fig = await p.evaluate(() => { const i = document.querySelector('img[data-figure]'); if (!i) return null; const r = i.getBoundingClientRect(); return { w: r.width, h: r.height } })
+  const fig = await p.evaluate(() => { const i = document.querySelector('img[data-figure="output"]'); if (!i) return null; const r = i.getBoundingClientRect(); return { w: r.width, h: r.height } })
   if (fig && (Math.abs(fig.w - FRAME.w) > 1 || Math.abs(fig.h - FRAME.h) > 1))
     res.problems.push(`output panel body is ${fig.w.toFixed(1)}×${fig.h.toFixed(1)}, frame.json shoots ${FRAME.w}×${FRAME.h}`)
   if (res.problems.length) fails++

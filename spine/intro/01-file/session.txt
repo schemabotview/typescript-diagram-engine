@@ -1,0 +1,3 @@
+ana@laptop:~/miniflow$ node src/cli.ts render scenes/self.json --svg out
+/self.svg
+wrote out/self.svg

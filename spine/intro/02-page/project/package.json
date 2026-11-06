@@ -1,0 +1,33 @@
+{
+  "name": "miniflow",
+  "version": "2.0.0",
+  "description": "A small declarative diagram engine: scenes in, SVG out.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "miniflow": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "check": "tsc --noEmit && oxlint --type-aware src test && vitest run",
+    "prepack": "npm run build"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "oxlint": "^1.91.0",
+    "oxlint-tsgolint": "^7.0.2006",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.1.0"
+  }
+}

@@ -210,7 +210,9 @@ def shoot(d: Path, meta: dict) -> None:
     if not caps and not page:
         return
     shots.mkdir()
-    w, h = FACTS['figure']['w'], FACTS['figure']['h']
+    # A concept frame (the intro) draws a picture at its own size: the step names it.
+    size = meta.get('shot', FACTS['figure'])
+    w, h = size['w'], size['h']
     if page:
         shoot_page(d, page, shots / shot_name(page['name']), w, h)
     for rel in caps:

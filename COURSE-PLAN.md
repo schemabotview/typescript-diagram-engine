@@ -429,9 +429,10 @@ Output panel for 11.3–11.6 (the live page); terminal for the dev server, the `
   frame (its font size × the capture's scale), or the picture fails like an overflowing pane.
 - **Versions** (resolved 2026-11-06): the repo pins graphl-flow 0.11.0 (the `figure` release) and
   ui-shell 1.1.0, whose peer range `>=0.2.0 <1` admits it.
-- **To verify at infra against TypeScript 7.0.2**: `erasableSyntaxOnly`,
-  `rewriteRelativeImportExtensions`, `isolatedDeclarations`, `--extendedDiagnostics` output, and
-  whether typescript-eslint 8.72 supports TS 7. If one is missing, the section falls back to TS 6.
+- **Verified against TypeScript 7.0.2** (2026-11-06): `erasableSyntaxOnly`,
+  `rewriteRelativeImportExtensions`, `isolatedDeclarations`, `--extendedDiagnostics`, `const` type
+  parameters, `using`: all work, no section fell back to TS 6. typescript-eslint does not support
+  TS 7 (Decision 11).
 - **Repo name**: `typescript-diagram-engine` (matches `python-expense-tracker`), app `miniflow`.
   OK?
 - **Length**: 87 sections is about 2 h 13 min, longer than the reference's 72. Already cut:

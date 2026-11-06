@@ -1,4 +1,15 @@
 {
   "_comment": "Per-course publish titles (the shell's gen:desc / thumb read them).",
-  "start": "Learn TypeScript by building a diagram engine: the first file"
+  "intro": "Learn TypeScript by building a diagram engine: TypeScript, and what we'll build",
+  "start": "Learn TypeScript by building a diagram engine: the first file",
+  "model": "Learn TypeScript by building a diagram engine: describe a scene in types",
+  "layout": "Learn TypeScript by building a diagram engine: lay out the boxes",
+  "draw": "Learn TypeScript by building a diagram engine: draw the scene",
+  "route": "Learn TypeScript by building a diagram engine: draw the arrows",
+  "load": "Learn TypeScript by building a diagram engine: read scene files",
+  "command": "Learn TypeScript by building a diagram engine: make it a command",
+  "trust": "Learn TypeScript by building a diagram engine: tests, strict flags and a linter",
+  "types": "Learn TypeScript by building a diagram engine: types that compute",
+  "browser": "Learn TypeScript by building a diagram engine: run it in a browser",
+  "ship": "Learn TypeScript by building a diagram engine: ship it as a package"
 }

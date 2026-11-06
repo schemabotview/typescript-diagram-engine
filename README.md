@@ -3,7 +3,7 @@
 A GraphL concept: one film that teaches TypeScript by building `miniflow`, a small declarative
 diagram engine, from one box drawn by a script to a typed, tested npm package.
 
-**Status:** Course 2 (the pilot) authored and checked; the rest follow `COURSE-PLAN.md`.
+**Status:** all 12 courses (87 sections) authored and checked; narration audio and recording next.
 
 ## Run
 

@@ -1,0 +1,20 @@
+{
+  "title": "the finished miniflow draws itself: a file",
+  "from": "ship/06-next",
+  "commands": [
+    "node src/cli.ts render scenes/self.json --svg out/self.svg"
+  ],
+  "capture": [
+    "out/self.svg"
+  ],
+  "shot": {
+    "w": 1707,
+    "h": 909
+  },
+  "lab": true,
+  "recorded": {
+    "inputs": "8b22f3678bc2af63",
+    "outputs": "0f772cd376ceb841",
+    "node": "26.13.0"
+  }
+}

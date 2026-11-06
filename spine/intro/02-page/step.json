@@ -1,0 +1,25 @@
+{
+  "title": "the finished miniflow draws itself: the page",
+  "from": "ship/06-next",
+  "changes": [
+    "web/main.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit"
+  ],
+  "page": {
+    "name": "localhost:5173",
+    "serve": "npx vite web --port 5173 --strictPort",
+    "url": "http://localhost:5173/"
+  },
+  "shot": {
+    "w": 1707,
+    "h": 909
+  },
+  "lab": true,
+  "recorded": {
+    "inputs": "fec63279f1bcb401",
+    "outputs": "0c71e499a85d60d8",
+    "node": "26.13.0"
+  }
+}

@@ -1,0 +1,50 @@
+import { defineScene } from '../src/define.ts'
+
+export const checkout = defineScene({
+  title: 'Checkout',
+  nodes: [
+    { type: 'note', id: 'why', text: 'one order' },
+    {
+      type: 'group', id: 'client', title: 'Client', dir: 'col',
+      children: [
+        { type: 'item', id: 'browser', title: 'Browser',
+          subtitle: 'the shop page', tone: 'consume' },
+        { type: 'item', id: 'cart', title: '<Cart>',
+          subtitle: 'the basket', tone: 'consume' },
+      ],
+    },
+    { type: 'item', id: 'api', title: 'API',
+      subtitle: 'POST /checkout', tone: 'serve' },
+    {
+      type: 'group', id: 'services', title: 'Services', dir: 'col',
+      children: [
+        { type: 'item', id: 'payments', title: 'Payments',
+          subtitle: 'card provider', tone: 'source' },
+        { type: 'item', id: 'inventory', title: 'Inventory',
+          subtitle: 'reserve stock', tone: 'ingest' },
+        { type: 'item', id: 'queue', title: 'Queue',
+          subtitle: 'order events', tone: 'infra' },
+      ],
+    },
+    {
+      type: 'group', id: 'data', title: 'Data', dir: 'col',
+      children: [
+        { type: 'item', id: 'orders', title: 'Orders DB',
+          subtitle: 'one row per order', tone: 'store' },
+        { type: 'item', id: 'email', title: 'Email',
+          subtitle: 'receipts', tone: 'consume' },
+      ],
+    },
+  ],
+  edges: [
+    { from: 'browser', to: 'cart' },
+    { from: 'cart', to: 'api' },
+    { from: 'api', to: 'payments' },
+    { from: 'api', to: 'inventory' },
+    { from: 'api', to: 'queue' },
+    { from: 'payments', to: 'orders', label: 'paid' },
+    { from: 'inventory', to: 'orders' },
+    { from: 'queue', to: 'orders' },
+    { from: 'queue', to: 'email' },
+  ],
+})
