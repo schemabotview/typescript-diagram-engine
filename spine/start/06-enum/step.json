@@ -1,0 +1,18 @@
+{
+  "title": "syntax Node refuses",
+  "from": "start/04-tsc",
+  "changes": [
+    "main.ts"
+  ],
+  "commands": [
+    "node --stack-trace-limit=0 main.ts"
+  ],
+  "exit": {
+    "node --stack-trace-limit=0 main.ts": 1
+  },
+  "recorded": {
+    "inputs": "afc45419e3be500b",
+    "outputs": "de2d5da3071fe137",
+    "node": "26.13.0"
+  }
+}

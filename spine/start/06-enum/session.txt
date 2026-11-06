@@ -1,0 +1,17 @@
+ana@laptop:~/miniflow$ node --stack-trace-limit=0 main.ts
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+[file:///home/ana/miniflow/main.ts:3
+
+enum Tone { Source, Store }
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+const fills = ['#e8edff', '#e6f7ee']
+
+SyntaxError [ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX]: TypeScript enum is not 
+supported in strip-only mode] {
+  code: 'ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX'
+}
+
+Node.js v26.13.0

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.toolchain/
+out/
+scripts/out/
+scripts/segments/
+scripts/.tmp/
+public/audio/**/*.tmp

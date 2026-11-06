@@ -1,0 +1,19 @@
+{
+  "title": "a type error Node still runs",
+  "from": "start/04-tsc",
+  "changes": [
+    "main.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "4f7fc0d29dfac91e",
+    "outputs": "f5d5bb625ca00de4",
+    "node": "26.13.0"
+  }
+}

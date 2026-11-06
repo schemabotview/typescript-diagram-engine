@@ -1,0 +1,5 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+main.ts(5,39): error TS2322: Type 'string' is not assignable to type 'nu
+mber'.
+ana@laptop:~/miniflow$ node main.ts
+wrote out/box.svg: 8024 × 44

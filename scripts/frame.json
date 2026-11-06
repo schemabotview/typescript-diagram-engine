@@ -1,0 +1,8 @@
+{
+  "_comment": "The output panel's body in the 4K frame, which spine.py shoots each picture at (1:1). check-render measures the real box and fails if this drifts.",
+  "figure": {
+    "w": 1997,
+    "h": 1245,
+    "minTextPx": 24
+  }
+}

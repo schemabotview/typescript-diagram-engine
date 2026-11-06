@@ -1,0 +1,19 @@
+{
+  "title": "erasable only: the box keeps its fill, the enum goes",
+  "from": "start/07-flag",
+  "changes": [
+    "main.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "capture": [
+    "out/box.svg"
+  ],
+  "recorded": {
+    "inputs": "a21584d117ef23bb",
+    "outputs": "02c07db9692f72ea",
+    "node": "26.13.0"
+  }
+}

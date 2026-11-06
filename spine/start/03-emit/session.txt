@@ -1,0 +1,2 @@
+ana@laptop:~/miniflow$ npx tsc main.ts --outDir emit --target esnext --m
+odule nodenext --types node

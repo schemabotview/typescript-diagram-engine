@@ -1,0 +1,19 @@
+{
+  "title": "main.ts draws one box",
+  "from": "start/01-init",
+  "changes": [
+    "main.ts"
+  ],
+  "commands": [
+    "node main.ts"
+  ],
+  "capture": [
+    "out/box.svg"
+  ],
+  "panel": "output",
+  "recorded": {
+    "inputs": "0b7d53d118577af6",
+    "outputs": "0f31d8a41bd22ec6",
+    "node": "26.13.0"
+  }
+}

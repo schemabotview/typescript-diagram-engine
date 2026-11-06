@@ -1,0 +1,18 @@
+{
+  "title": "erasableSyntaxOnly: tsc refuses it too",
+  "from": "start/06-enum",
+  "changes": [
+    "tsconfig.json"
+  ],
+  "commands": [
+    "npx tsc --noEmit"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "08d0856c2b081436",
+    "outputs": "f9b7c350e47eccf9",
+    "node": "26.13.0"
+  }
+}

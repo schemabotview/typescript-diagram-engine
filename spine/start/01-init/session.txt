@@ -1,0 +1,5 @@
+ana@laptop:~/miniflow$ node --version
+v26.13.0
+ana@laptop:~/miniflow$ npm --version
+11.20.0
+ana@laptop:~/miniflow$ npm init -y --init-type=module > /dev/null

@@ -48,8 +48,8 @@ component. This film is framework-free on purpose. It uses plain DOM in Course 1
 ## Packaging
 
 **One film: "Learn TypeScript by building a diagram engine: full course, beginner to
-professional"**. It has 12 courses and 97 sections: 86 lessons at a mean of 92 s, plus 11 course
-openers of about 70 s (see "Course openers"), about 2 h 25 min in all. It opens
+professional"**. It has 12 courses and 98 sections: 87 lessons at a mean of 92 s, plus 11 course
+openers of about 70 s (see "Course openers"), about 2 h 27 min in all. It opens
 with the finished `miniflow` drawing a scene two ways: as an SVG file, and live in the browser
 with its theme toggled. The last section bridges to the React film.
 
@@ -150,7 +150,8 @@ Frozen: frames quote them. Extend; never change a value a frame already quotes.
 
 | fact | value |
 |---|---|
-| user / home | `ana` / `/home/ana/miniflow` |
+| user / home / host | `ana` / `/home/ana/miniflow` / `laptop` (prompt `ana@laptop:~/miniflow$`) |
+| terminal | 72 columns (the IDE terminal's width); a longer row wraps |
 | box | padding 12 px; gap between siblings 24 px (32 when an edge crosses) |
 | monospace measurer | 9.6 × 20 px per character (Courses 4–10; the browser measures from 11) |
 | fit | margin 4% per side, scale clamped 0.05–4 (the same as graphl-flow's `fit.ts`) |
@@ -271,7 +272,7 @@ The table grows by one row per course, so the opener before Course 12 carries te
 | 1 | What TypeScript is, and where it's used | concept | JavaScript + types → checked by `tsc`, erased before running; VS Code, Angular, Deno, Playwright, graphl-flow itself |
 | 2 | What we'll build | concept | **the app map**: one box → scene → layout → arrows → CLI → browser → package; the finished `self.json` drawn two ways (SVG, the live page) |
 
-**2. `start` · The first file · 6**
+**2. `start` · The first file · 7**
 
 | # | Section | Step | Side pane |
 |---|---|---|---|
@@ -279,8 +280,9 @@ The table grows by one row per course, so the opener before Course 12 carries te
 | 2 | `main.ts` | `node main.ts` writes `out/box.svg`: one box (output panel) | `.ts` file → Node strips types → V8 → a file |
 | 3 | ◆ full scene: where the types go | concept + lab (`tsc` emit beside the source) | source → type check (tsc) ∥ erase (Node) → JavaScript → V8; the emitted file with every type removed |
 | 4 | `tsc` and `tsconfig.json` | `npm i -D typescript`, `strict`, `tsc --noEmit` clean | checker reads tsconfig → files → errors or silence |
-| 5 | A type error Node still runs | `width: "10"`; `tsc` refuses, `node` draws a box 1024 wide (`"10" + 24`) | two paths from one file: checked vs run; who catches what |
-| 6 | Syntax Node refuses | an `enum Tone`: `ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX`; `erasableSyntaxOnly` | erasable (deleted) vs non-erasable (needs emit) syntax |
+| 5 | A type error Node still runs | `width: '80'`; `tsc` refuses (TS2322), `node` draws a box 8024 wide (`'80' + 24`) | two paths from one file: checked vs run; who catches what |
+| 6 | Syntax Node refuses | an `enum Tone`: `ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX` | erasable (deleted) vs non-erasable (needs emit) syntax |
+| 7 | `erasableSyntaxOnly`: make `tsc` agree with Node | the flag in `tsconfig.json`; `tsc` refuses the enum (TS1294) | one rule, two enforcers: the checker now refuses what Node would |
 
 **3. `model` · Describe a scene in types · 8**
 
@@ -442,6 +444,10 @@ Output panel for 11.3–11.6 (the live page); terminal for the dev server, the `
    course adds), once per course, never per section. It re-shows output the spine already captured,
    so it adds no spine step, and it runs about 70 s, under the 82 s floor for a lesson, because it
    teaches nothing new (2026-11-06).
+10. Course 2 splits the enum lesson in two (2.6 Node refuses, 2.7 `erasableSyntaxOnly`): the real
+    transcript of both, Node's error and `tsc`'s, is 20 rows and the terminal shows 17. 2.6 runs
+    `node --stack-trace-limit=0`, which drops only Node's internal stack frames, so the error itself
+    fits whole (2026-11-06).
 
 ## Open
 
@@ -459,7 +465,7 @@ Output panel for 11.3–11.6 (the live page); terminal for the dev server, the `
   OK?
 - **Openers (Decision 9)**: about 70 s each, below the shared 82–120 s range. OK, or hold them to
   82 s?
-- **Length**: 86 lessons + 11 openers is about 2 h 25 min, longer than the reference's 72. Already cut:
+- **Length**: 87 lessons + 11 openers is about 2 h 27 min, longer than the reference's 72. Already cut:
   `Promise.all`, loading a dropped file, and a separate `as const` section.
 - **Deferred:** React (the sequel), publishing to the real npm registry (the film stops at a
   tarball), decorators, namespaces and declaration merging, variance annotations (`in`/`out`),

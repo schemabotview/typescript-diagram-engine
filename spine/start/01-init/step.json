@@ -1,0 +1,13 @@
+{
+  "title": "Node, npm and a folder",
+  "commands": [
+    "node --version",
+    "npm --version",
+    "npm init -y --init-type=module > /dev/null"
+  ],
+  "recorded": {
+    "inputs": "79de69203b240cc8",
+    "outputs": "fc0a1bbbd00a28c8",
+    "node": "26.13.0"
+  }
+}

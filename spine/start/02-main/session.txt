@@ -1,0 +1,2 @@
+ana@laptop:~/miniflow$ node main.ts
+wrote out/box.svg: 104 × 44

@@ -1,0 +1,16 @@
+{
+  "title": "lab: what tsc emits for main.ts",
+  "lab": true,
+  "from": "start/02-main",
+  "setup": [
+    "npm install --save-dev typescript@7.0.2 @types/node@26.6.6"
+  ],
+  "commands": [
+    "npx tsc main.ts --outDir emit --target esnext --module nodenext --types node"
+  ],
+  "recorded": {
+    "inputs": "b81d40724cf82b05",
+    "outputs": "7bb0abbe31231a36",
+    "node": "26.13.0"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "typescript-diagram-engine",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "check": "npm run check:content && npm run check:render",
+    "check:content": "node scripts/check-content.mjs",
+    "check:render": "node scripts/check-render.mjs",
+    "check:spine": "python3 scripts/spine.py check",
+    "spine": "python3 scripts/spine.py",
+    "shots": "graphl-shots-4k",
+    "gen:audio": "graphl-gen-audio",
+    "gen:desc": "graphl-gen-desc",
+    "record": "graphl-record",
+    "record:all": "caffeinate -ims graphl-record-all",
+    "record:reels": "graphl-record-reels",
+    "thumb": "graphl-thumb"
+  },
+  "dependencies": {
+    "@graphlearning/graphl-flow": "0.11.0",
+    "@graphlearning/shell": "1.1.0",
+    "lucide-react": "1.70.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.2.1",
+    "esbuild": "0.28.2",
+    "puppeteer": "25.16.0",
+    "typescript": "5.9.3",
+    "vite": "8.3.6"
+  }
+}

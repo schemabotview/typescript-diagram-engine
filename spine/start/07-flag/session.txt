@@ -1,0 +1,3 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+main.ts(3,6): error TS1294: This syntax is not allowed when 'erasableSyn
+taxOnly' is enabled.
