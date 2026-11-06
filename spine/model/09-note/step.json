@@ -1,0 +1,16 @@
+{
+  "title": "the note case, handled",
+  "from": "model/08-never",
+  "changes": [
+    "main.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "4bad312d32a9ef47",
+    "outputs": "292f19b308e50ff2",
+    "node": "26.13.0"
+  }
+}

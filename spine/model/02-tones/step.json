@@ -1,0 +1,20 @@
+{
+  "title": "literal unions: tones",
+  "from": "model/01-infer",
+  "changes": [
+    "main.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "c4cfcc096de4e4c6",
+    "outputs": "568393b93eb044dc",
+    "node": "26.13.0"
+  }
+}

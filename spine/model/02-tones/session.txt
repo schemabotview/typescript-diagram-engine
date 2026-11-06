@@ -1,0 +1,5 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try.ts(3,7): error TS2820: Type '"stroe"' is not assignable to type 'Ton
+e'. Did you mean '"store"'?
+ana@laptop:~/miniflow$ node main.ts
+[store] orders: Orders DB

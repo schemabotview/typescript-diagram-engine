@@ -1,0 +1,21 @@
+{
+  "title": "object types: interface and type",
+  "from": "model/02-tones",
+  "changes": [
+    "main.ts",
+    "src/model.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "5595f3f367497b51",
+    "outputs": "c7d431048fe0d39b",
+    "node": "26.13.0"
+  }
+}

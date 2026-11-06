@@ -1,0 +1,13 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node main.ts
+Checkout
+  note: one checkout, seven parts
+  [consume] Browser - the shop page
+  [serve] API - POST /checkout
+  Services (col)
+    [source] Payments - card provider
+    [ingest] Inventory - reserve stock
+    [infra] Queue - order events
+  Data (col)
+    [store] Orders DB - one row per order
+    [consume] Email - receipts

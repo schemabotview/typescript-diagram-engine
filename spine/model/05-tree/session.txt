@@ -1,0 +1,5 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node main.ts
+Data (col)
+  [store] orders: Orders DB
+  [consume] email: Email

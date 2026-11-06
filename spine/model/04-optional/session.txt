@@ -1,0 +1,7 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try.ts(4,13): error TS18048: 'api.sub' is possibly 'undefined'.
+ana@laptop:~/miniflow$ node main.ts
+[neutral] orders: Orders DB - one row per order
+  sub length: 17
+[serve] api: API
+  sub length: undefined

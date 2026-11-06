@@ -1,0 +1,19 @@
+{
+  "title": "discriminated unions",
+  "from": "model/05-tree",
+  "changes": [
+    "main.ts",
+    "scenes/checkout.ts",
+    "src/model.ts",
+    "tsconfig.json"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "1490ae0bd25b30fb",
+    "outputs": "32640754d6397db4",
+    "node": "26.13.0"
+  }
+}

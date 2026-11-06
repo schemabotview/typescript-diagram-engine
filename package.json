@@ -11,7 +11,7 @@
     "check:render": "node scripts/check-render.mjs",
     "check:spine": "python3 scripts/spine.py check",
     "spine": "python3 scripts/spine.py",
-    "shots": "graphl-shots-4k",
+    "shots": "node scripts/shots.mjs",
     "gen:audio": "graphl-gen-audio",
     "gen:desc": "graphl-gen-desc",
     "record": "graphl-record",

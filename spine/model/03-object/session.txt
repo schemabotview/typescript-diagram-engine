@@ -1,0 +1,6 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try.ts(3,32): error TS2561: Object literal may only specify known proper
+ties, but 'titel' does not exist in type 'Item'. Did you mean to write '
+title'?
+ana@laptop:~/miniflow$ node main.ts
+[store] orders: Orders DB

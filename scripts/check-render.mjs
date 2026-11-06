@@ -7,6 +7,7 @@
 import { readFileSync } from 'node:fs'
 import puppeteer from 'puppeteer'
 import { createServer } from 'vite'
+import { loadRegistry } from '../node_modules/@graphlearning/shell/scripts/_paths.mjs'
 
 const FRAME = JSON.parse(readFileSync(new URL('./frame.json', import.meta.url), 'utf8')).figure
 const server = await createServer({ server: { port: 5179, strictPort: true }, logLevel: 'error' }); await server.listen()
@@ -19,8 +20,9 @@ p.on('console', m => m.type() === 'error' && !/status of 404/.test(m.text()) && 
 p.on('requestfailed', r => errs.push(`${at}: ${r.url()} failed`))
 p.on('response', r => r.status() === 404 && !/\/audio\/|favicon/.test(r.url()) && errs.push(`${at}: 404 ${r.url()}`))
 await p.goto(`${BASE}?capture=1#/`, { waitUntil: 'networkidle2' })
-await p.waitForFunction(() => !!window.__scene)
-const plan = (await p.evaluate(() => window.__scene.plan())).map((x) => x.slug)
+await p.waitForFunction(() => !!window.__scene, { timeout: 20000 }).catch(() => { console.log('FAIL the app did not start:', errs.join(' | ') || 'no error logged'); process.exit(1) })
+const { COURSES } = await loadRegistry()
+const plan = Object.values(COURSES).flatMap((c) => c.sections.map((x) => `${c.id}-${x.id}`))
 const only = process.argv[2]
 const slugs = [...new Set(plan)].filter((s) => !only || s.startsWith(only))
 const BODY_MIN_PX = +(process.env.BODY_MIN_PX ?? 24), ICON_MIN_PX = +(process.env.ICON_MIN_PX ?? 32)

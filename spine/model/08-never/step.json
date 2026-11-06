@@ -1,0 +1,20 @@
+{
+  "title": "exhaustiveness with never",
+  "from": "model/07-narrow",
+  "changes": [
+    "main.ts",
+    "scenes/checkout.ts",
+    "src/model.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "6ca876b1ecee7b33",
+    "outputs": "6d6f33b7a3592fee",
+    "node": "26.13.0"
+  }
+}

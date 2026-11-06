@@ -1,0 +1,20 @@
+{
+  "title": "optional fields and undefined",
+  "from": "model/03-object",
+  "changes": [
+    "main.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "80bd4045a6355a8d",
+    "outputs": "c8802e1fd32271b5",
+    "node": "26.13.0"
+  }
+}

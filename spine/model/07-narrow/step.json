@@ -1,0 +1,16 @@
+{
+  "title": "narrowing",
+  "from": "model/06-union",
+  "changes": [
+    "main.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "d3dc3ea9f9308c44",
+    "outputs": "8090e7aed7e3a654",
+    "node": "26.13.0"
+  }
+}

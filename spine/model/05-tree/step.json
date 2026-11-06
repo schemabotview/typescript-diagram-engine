@@ -1,0 +1,20 @@
+{
+  "title": "arrays, and a tree of groups",
+  "from": "model/04-optional",
+  "changes": [
+    "main.ts",
+    "src/model.ts"
+  ],
+  "delete": [
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "dc9a7c46a05c7e4c",
+    "outputs": "5b605afd3ffd7ec1",
+    "node": "26.13.0"
+  }
+}

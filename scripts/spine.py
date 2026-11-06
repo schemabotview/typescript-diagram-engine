@@ -308,8 +308,12 @@ def main() -> None:
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'check'
     arg = sys.argv[2] if len(sys.argv) > 2 else None
     if cmd == 'record':
-        for d in order(select(arg)):
-            record(d)
+        chosen = select(arg)
+        for d in order(chosen):
+            rec = load(d).get('recorded')
+            current = rec and rec['inputs'] == inputs_of(d) and rec['outputs'] == outputs_of(d)
+            if d in chosen or not current:
+                record(d)
     elif cmd == 'check':
         sys.exit(check())
     elif cmd == 'replay':

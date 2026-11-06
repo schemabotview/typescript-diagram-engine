@@ -1,0 +1,3 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+main.ts(18,13): error TS2322: Type 'Note' is not assignable to type 'nev
+er'.

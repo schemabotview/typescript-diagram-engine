@@ -1,0 +1,19 @@
+{
+  "title": "primitive types and inference",
+  "from": "start/08-erasable",
+  "changes": [
+    "main.ts"
+  ],
+  "delete": [
+    "out/box.svg"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "7c5fb60462613cc3",
+    "outputs": "ff9875c0e7aa7875",
+    "node": "26.13.0"
+  }
+}
