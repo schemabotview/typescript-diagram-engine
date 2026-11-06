@@ -1,0 +1,22 @@
+{
+  "title": "readonly and immutable rects",
+  "from": "layout/07-generator",
+  "changes": [
+    "main.ts",
+    "src/fit.ts",
+    "src/layout.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "10dce221bca88ca8",
+    "outputs": "eed810a380fbc673",
+    "node": "26.13.0"
+  }
+}

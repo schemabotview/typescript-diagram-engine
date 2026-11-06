@@ -1,0 +1,20 @@
+{
+  "title": "generators",
+  "from": "layout/06-constraint",
+  "changes": [
+    "main.ts",
+    "src/tree.ts"
+  ],
+  "delete": [
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "b93fa5bee23af8cd",
+    "outputs": "82357f5a53b9207f",
+    "node": "26.13.0"
+  }
+}

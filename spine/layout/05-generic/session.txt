@@ -1,0 +1,15 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node main.ts
+[
+  'why',      'browser',
+  'api',      'services',
+  'payments', 'inventory',
+  'queue',    'data',
+  'orders',   'email'
+]
+[
+  264, 149, 159, 173,
+  149, 149, 140, 212,
+  188, 101
+]
+widest: 264

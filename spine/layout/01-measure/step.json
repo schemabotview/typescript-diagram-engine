@@ -1,0 +1,17 @@
+{
+  "title": "functions: measure and row",
+  "from": "model/09-note",
+  "changes": [
+    "main.ts",
+    "src/measure.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "d6f4e33a7b1ef487",
+    "outputs": "7e700cf42b352f50",
+    "node": "26.13.0"
+  }
+}

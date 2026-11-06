@@ -1,0 +1,20 @@
+{
+  "title": "recursion over the tree",
+  "from": "layout/01-measure",
+  "changes": [
+    "main.ts",
+    "src/layout.ts"
+  ],
+  "delete": [
+    "src/measure.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "746c1f00416f81f4",
+    "outputs": "6cad3527c3a39793",
+    "node": "26.13.0"
+  }
+}

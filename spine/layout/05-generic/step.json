@@ -1,0 +1,17 @@
+{
+  "title": "generics",
+  "from": "layout/04-reduce",
+  "changes": [
+    "main.ts",
+    "src/tree.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "33e0351ee3b38995",
+    "outputs": "2330ec689326790f",
+    "node": "26.13.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "title": "generic constraints",
+  "from": "layout/05-generic",
+  "changes": [
+    "main.ts",
+    "src/tree.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "exit": {
+    "npx tsc --noEmit": 1
+  },
+  "recorded": {
+    "inputs": "6c96dd4f21502c56",
+    "outputs": "ff84ef8e4d39b92e",
+    "node": "26.13.0"
+  }
+}

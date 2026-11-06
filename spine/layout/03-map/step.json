@@ -1,0 +1,22 @@
+{
+  "title": "Map, and what get returns",
+  "from": "layout/02-recurse",
+  "changes": [
+    "main.ts",
+    "src/layout.ts",
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts",
+    "node --stack-trace-limit=0 try.ts"
+  ],
+  "exit": {
+    "node --stack-trace-limit=0 try.ts": 1
+  },
+  "recorded": {
+    "inputs": "7edaaa29f2931cb7",
+    "outputs": "571a9e368912ff3f",
+    "node": "26.13.0"
+  }
+}

@@ -1,0 +1,7 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node main.ts
+note  why      264 x 44
+item  browser  149 x 64
+item  api      159 x 64
+group services 173 x 296
+group data     212 x 208

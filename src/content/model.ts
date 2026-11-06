@@ -87,7 +87,7 @@ The scratch file is gone, because nothing here is meant to fail. But look at the
       scene: 'model-union',
       narration: `A child in our tree can now be an item or a group. TypeScript can describe that, and the trick is a single field.
 
-The model file gives each shape a type field with a literal value. Every Item has type item; every Group has type group. Then the highlighted line names the combination: a SceneNode is an Item or a Group. And a group's children are now SceneNodes, so groups can hold groups, as deep as we like.
+The model file gives each shape a type field with a literal value. Every Item has type item, and every Group has type group. Then the highlighted line names the combination: a SceneNode is an Item or a Group. And a group's children are now SceneNodes, so groups can hold groups, as deep as we like.
 
 That type field is called the discriminant, and the side pane shows why it matters. A SceneNode on its own could be either shape, so the checker lets us read only the fields both share. But the moment we test the tag, the union splits in two. If type is item, it is an Item, with a title, a sub and a tone. If type is group, it is a Group, with a direction and children.
 

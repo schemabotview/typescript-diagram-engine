@@ -1,0 +1,10 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node main.ts
+visit why
+visit browser
+visit api
+visit services
+visit payments
+visit inventory
+too wide: Inventory (9 chars)
+6 visited

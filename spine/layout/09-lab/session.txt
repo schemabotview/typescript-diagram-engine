@@ -1,0 +1,12 @@
+ana@laptop:~/miniflow$ node main.ts
+measure model    149 x 64
+measure layout   600 x 44
+measure route    120 x 64
+measure engine   624 x 188
+measure draw     130 x 64
+place   model    at 0, 0
+place   engine   at 173, 0
+place   layout   at 185, 44
+place   route    at 185, 112
+place   draw     at 821, 0
+fit     951 x 188 into 1280 x 720 at 1.24x

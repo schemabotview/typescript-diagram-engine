@@ -1,0 +1,6 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node main.ts
+browser { w: 149, h: 64 }
+api { w: 159, h: 64 }
+row of items: { w: 332, h: 64 }
+no padding: { w: 48, h: 20 }

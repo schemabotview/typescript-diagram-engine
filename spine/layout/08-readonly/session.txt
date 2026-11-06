@@ -1,0 +1,10 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try.ts(5,35): error TS2540: Cannot assign to 'x' because it is a read-on
+ly property.
+ana@laptop:~/miniflow$ node main.ts
+content 1053 x 296
+{
+  scale: 1.1183285849952518,
+  dx: 51.19999999999993,
+  dy: 194.48736942070275
+}

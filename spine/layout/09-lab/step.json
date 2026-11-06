@@ -1,0 +1,21 @@
+{
+  "title": "lab: the layout passes, logged",
+  "from": "layout/08-readonly",
+  "changes": [
+    "main.ts",
+    "scenes/self.ts",
+    "src/layout.ts"
+  ],
+  "delete": [
+    "try.ts"
+  ],
+  "commands": [
+    "node main.ts"
+  ],
+  "lab": true,
+  "recorded": {
+    "inputs": "63bc52659ecc9d60",
+    "outputs": "eab95ecb8c568724",
+    "node": "26.13.0"
+  }
+}

@@ -1,0 +1,12 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+ana@laptop:~/miniflow$ node main.ts
+10 rects
+orders at 853 44
+ana@laptop:~/miniflow$ node --stack-trace-limit=0 try.ts
+file:///home/ana/miniflow/try.ts:5
+console.log(cart.x)
+                 ^
+
+[TypeError: Cannot read properties of undefined (reading 'x')]
+
+Node.js v26.13.0

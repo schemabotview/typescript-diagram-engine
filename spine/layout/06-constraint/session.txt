@@ -1,0 +1,6 @@
+ana@laptop:~/miniflow$ npx tsc --noEmit
+try.ts(3,14): error TS2353: Object literal may only specify known proper
+ties, and 'name' does not exist in type '{ id: string; }'.
+ana@laptop:~/miniflow$ node main.ts
+10 nodes; the browser node: item
+120

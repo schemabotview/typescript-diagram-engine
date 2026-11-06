@@ -1,0 +1,20 @@
+{
+  "title": "higher-order functions",
+  "from": "layout/03-map",
+  "changes": [
+    "main.ts",
+    "src/layout.ts"
+  ],
+  "delete": [
+    "try.ts"
+  ],
+  "commands": [
+    "npx tsc --noEmit",
+    "node main.ts"
+  ],
+  "recorded": {
+    "inputs": "54213535e672b399",
+    "outputs": "6533b68ec4490f2f",
+    "node": "26.13.0"
+  }
+}
