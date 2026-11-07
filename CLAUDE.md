@@ -56,14 +56,17 @@ only the FIRST course, so it shot nothing for any other (worth fixing in ui-shel
 
 ## Frames
 
-- `src/scenes/ide.ts` is frame v2 ported from graphl-flow's `dev/fixtures/studies/ide-frame.ts`
-  (the reference repo was not reachable when this was built). It THROWS when a transcript has more
-  rows than the variant's terminal shows: `code` 8, `run` 17 (with the explorer).
+- `src/scenes/ide.ts` is frame v2 ported from graphl-flow's `dev/fixtures/studies/ide-frame.ts`.
+  Editor and terminal share 26 rows: the terminal takes exactly its transcript's rows (at least 6;
+  one more without the explorer, for the breadcrumb), the editor the rest, so only the divider
+  between them moves from frame to frame. The output panel keeps a 9-row editor: its picture is shot
+  at that panel's exact 4K size (`scripts/frame.json`). The editor shows a hand-picked `show`, grown
+  to fill it, or else a window around the highlight; `ide()` does this, so direct callers get it too.
 - `src/spine.ts` is the only way a scene reads the spine: `file`, `session`, `shot`, `tree`,
   `lineOf`/`linesOf`, and `grab` for a value quoted in a side pane (never typed). The explorer
   opens only folders holding the active or a new file; a folder of modified files shows `M` closed.
 - `src/scenes/lesson.ts` builds a step section from its `step.json`: explorer marks, terminal or
-  output panel, variant, and an editor window around `focus` (the editor wraps at 71 columns).
+  output panel, and the `focus` highlight (the editor wraps at 71 columns).
 - Every step section is an IDE frame (Decision 12): a report too long for the terminal is saved
   (`> test.log 2>&1`) or piped, and the terminal greps the part the section teaches (9.3, 9.4, 12.3).
 - Course 10 shows computed types with a probe: `const p: 'probe' = value` in `try.ts`.

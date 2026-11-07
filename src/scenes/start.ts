@@ -9,7 +9,6 @@ const S = (n: string) => `start/${n}`
 const pkg = file(S('01-init'), 'package.json')
 const node: SceneModel = ide({
   model: 'Node carries V8; npm talks to the registry',
-  variant: 'code',
   explorer: tree(S('01-init'), { active: 'package.json', added: ['package.json'] }),
   editor: { filename: 'package.json', lang: 'js', code: pkg, highlight: [lineOf(pkg, '"type"')] },
   session: session(S('01-init')),
@@ -30,7 +29,6 @@ const node: SceneModel = ide({
 const main2 = file(S('02-main'), 'main.ts')
 const main: SceneModel = ide({
   model: 'Node strips the types, then runs',
-  variant: 'run',
   explorer: tree(S('02-main'), { active: 'main.ts', added: ['main.ts', 'out/box.svg'] }),
   editor: { filename: 'main.ts', code: main2, show: [[lineOf(main2, 'type Box'), lineOf(main2, 'const h')]], highlight: [lineOf(main2, 'type Box'), lineOf(main2, 'const box'), lineOf(main2, 'const pad')] },
   output: { src: shot(S('02-main'), 'out/box.svg'), title: 'out/box.svg', alt: 'the one box main.ts drew' },
@@ -72,7 +70,6 @@ const emit: SceneModel = {
 const cfg4 = file(S('04-tsc'), 'tsconfig.json')
 const tsc: SceneModel = ide({
   model: 'tsc reads tsconfig, checks every file',
-  variant: 'code',
   explorer: tree(S('04-tsc'), { active: 'tsconfig.json', added: ['tsconfig.json', 'package-lock.json'], modified: ['package.json'] }),
   editor: { filename: 'tsconfig.json', lang: 'js', code: cfg4, highlight: [lineOf(cfg4, '"strict"'), lineOf(cfg4, '"noEmit"')] },
   session: session(S('04-tsc')),
@@ -92,7 +89,6 @@ const tsc: SceneModel = ide({
 const main5 = file(S('05-error'), 'main.ts'), run5 = session(S('05-error'))
 const error: SceneModel = ide({
   model: 'Checked and run are two paths',
-  variant: 'code',
   explorer: tree(S('05-error'), { active: 'main.ts', modified: ['main.ts'] }),
   editor: { filename: 'main.ts', code: main5, show: [[1, lineOf(main5, 'const h')]], highlight: [lineOf(main5, 'const box'), lineOf(main5, 'const w')] },
   session: session(S('05-error')),
@@ -117,7 +113,6 @@ const error: SceneModel = ide({
 const main6 = file(S('06-enum'), 'main.ts')
 const enumScene: SceneModel = ide({
   model: 'Erasable syntax vs syntax that needs emit',
-  variant: 'run',
   explorer: tree(S('06-enum'), { active: 'main.ts', modified: ['main.ts'] }),
   editor: { filename: 'main.ts', code: main6, show: [[lineOf(main6, 'enum Tone'), lineOf(main6, 'const box')]], highlight: [lineOf(main6, 'enum Tone')] },
   session: session(S('06-enum')),
@@ -143,7 +138,6 @@ const enumScene: SceneModel = ide({
 const cfg7 = file(S('07-flag'), 'tsconfig.json'), run7 = session(S('07-flag'))
 const flag: SceneModel = ide({
   model: 'One rule, two enforcers',
-  variant: 'code',
   explorer: tree(S('07-flag'), { active: 'tsconfig.json', modified: ['tsconfig.json'] }),
   editor: { filename: 'tsconfig.json', lang: 'js', code: cfg7, highlight: linesOf(cfg7, '"erasableSyntaxOnly"') },
   session: session(S('07-flag')),

@@ -17,7 +17,12 @@ const p = await b.newPage(); await p.setViewport({ width: 3840, height: 2160, de
 const errs = []; let at = ''
 p.on('pageerror', e => errs.push(`${at}: ${e.message}`)); // A missing narration wav is not a frame error: the recorder waits for the wavs (record:all).
 p.on('console', m => m.type() === 'error' && !/status of 404/.test(m.text()) && errs.push(`${at}: ${m.text()}`))
-p.on('requestfailed', r => errs.push(`${at}: ${r.url()} failed`))
+// A narration clip still streaming when the check moves to the next section is aborted by that
+// navigation: that is the reader app working, not a broken page. Any other failed request fails.
+p.on('requestfailed', r => {
+  if (r.resourceType() === 'media' && /\.wav$/.test(r.url()) && r.failure()?.errorText === 'net::ERR_ABORTED') return
+  errs.push(`${at}: ${r.url()} failed (${r.failure()?.errorText})`)
+})
 p.on('response', r => r.status() === 404 && !/\/audio\/|favicon/.test(r.url()) && errs.push(`${at}: 404 ${r.url()}`))
 await p.goto(`${BASE}?capture=1#/`, { waitUntil: 'networkidle2' })
 await p.waitForFunction(() => !!window.__scene, { timeout: 20000 }).catch(() => { console.log('FAIL the app did not start:', errs.join(' | ') || 'no error logged'); process.exit(1) })

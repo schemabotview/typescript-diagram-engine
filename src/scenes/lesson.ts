@@ -2,12 +2,11 @@
 //   explorer: the project after the step; `changes` marked M (existed in `from`) or U (new)
 //   bottom panel: the output panel when the step captured a picture and says `panel: output`,
 //                 else the terminal with the step's transcript
-//   variant: output → run; a transcript longer than the code terminal → run; else code
-//   editor: the file, with `focus` lines highlighted (found by text) and a window around them when
-//           the file is longer than the editor
+//   editor: the file, with `focus` lines highlighted (found by text); ide() sizes the editor to what
+//           the bottom panel leaves and windows it around them (or grows a hand-picked `show`)
 import type { Edge, SceneModel, SceneNode } from '@graphlearning/graphl-flow'
 import { file, lineOf, session, shot, tree } from '../spine'
-import { ide, terminalRows, type Variant } from './ide'
+import { ide } from './ide'
 
 interface StepJson { from?: string; changes?: string[]; capture?: string[]; page?: { name: string }; panel?: 'terminal' | 'output'; delete?: string[] }
 const steps = import.meta.glob<StepJson>('../../spine/*/*/step.json', { import: 'default', eager: true })
@@ -23,27 +22,7 @@ const filesOf = (step: string) => {
   return Object.keys(projects).filter((k) => k.startsWith(pre)).map((k) => k.slice(pre.length))
 }
 
-const EDITOR_ROWS: Record<Variant, number> = { code: 18, run: 9 }
-const COLS = 71 // the editor wraps a 72-character line (measured on load-async)
 const langOf = (path: string) => (/\.(json|js|mjs|cjs)$/.test(path) ? 'js' : /\.ts$/.test(path) ? 'ts' : /\.(sh)$/.test(path) ? 'shell' : 'text') as 'js' | 'ts' | 'shell' | 'text'
-
-/** Lines `a`..`b` of `text` (1-based) as rows on screen, wrapped at COLS. */
-const rowsOf = (lines: string[], a: number, b: number) => lines.slice(a - 1, b).reduce((n, l) => n + Math.max(1, Math.ceil(l.length / COLS)), 0)
-
-/** A window of the file around [first, last] that fits `room` rows, folds included. */
-export function windowFor(text: string, first: number, last: number, room: number): [number, number][] | undefined {
-  const lines = text.replace(/^\n/, '').replace(/\n$/, '').split('\n')
-  if (rowsOf(lines, 1, lines.length) <= room) return undefined
-  let a = first, b = last
-  const fits = (a: number, b: number) => rowsOf(lines, a, b) + (a > 1 ? 1 : 0) + (b < lines.length ? 1 : 0) <= room
-  if (!fits(a, b)) throw new Error(`lesson: lines ${first}–${last} do not fit ${room} rows`)
-  for (let grew = true; grew;) {
-    grew = false
-    if (a > 1 && fits(a - 1, b)) { a--; grew = true }
-    if (b < lines.length && fits(a, b + 1)) { b++; grew = true }
-  }
-  return [[a, b]]
-}
 
 export interface Lesson {
   step: string
@@ -52,14 +31,13 @@ export interface Lesson {
   model: string
   /** Lines to highlight: a needle highlights the first line containing it; a number is a line found by the scene itself. */
   focus?: (string | number)[]
-  /** Explicit ranges instead of the automatic window. */
+  /** Hand-picked ranges, grown to fill the editor (a window around the focus lines when they do not fit). */
   show?: [number, number][]
-  variant?: Variant
   side: SceneNode[]
   edges?: Edge[]
 }
 
-export function lesson({ step, path, model, focus = [], show, variant, side, edges }: Lesson): SceneModel {
+export function lesson({ step, path, model, focus = [], show, side, edges }: Lesson): SceneModel {
   const m = meta(step)
   const editPath = path ?? m.changes?.[0]
   if (!editPath) throw new Error(`lesson ${step}: no file to show`)
@@ -72,14 +50,12 @@ export function lesson({ step, path, model, focus = [], show, variant, side, edg
   const modified = changes.filter((f) => before.has(f))
   const output = m.panel === 'output' && (m.capture?.length || m.page)
   const transcript = output ? undefined : session(step)
-  const v: Variant = variant ?? (output || (transcript && transcript.split('\n').length > terminalRows('code', true)) ? 'run' : 'code')
   const highlight = focus.map((n) => (typeof n === 'number' ? n : lineOf(code, n)))
-  const shown = show ?? (highlight.length ? windowFor(code, Math.min(...highlight), Math.max(...highlight), EDITOR_ROWS[v]) : windowFor(code, 1, 1, EDITOR_ROWS[v]))
   const pic = output ? (m.page?.name ?? m.capture![0]) : undefined
   return ide({
-    model, variant: v,
+    model,
     explorer: tree(step, { active: editPath, added, modified }),
-    editor: { filename: editPath, lang: langOf(editPath), code, highlight, ...(shown && { show: shown }) },
+    editor: { filename: editPath, lang: langOf(editPath), code, highlight, ...(show && { show }) },
     ...(pic ? { output: { src: shot(step, pic), title: pic, alt: `what miniflow drew: ${pic}`, chrome: m.page ? 'browser' as const : 'tab' as const } } : { session: transcript }),
     side, edges,
   })
